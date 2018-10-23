@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.5.6, appid=730, map=cs_italy, totalcvar=2243
+// game=csgo, version=1.36.5.7, appid=730, map=cs_italy, totalcvar=2239
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -5477,22 +5477,6 @@ paintsplat_noise_enabled "1"
 // Default: "0"
 panel_test_title_safe "0"
 
-// Flags: FCVAR_ARCHIVE
-// Default: "720"
-panorama_debugger_saved_height "720"
-
-// Flags: FCVAR_ARCHIVE
-// Default: "1280"
-panorama_debugger_saved_width "1280"
-
-// Flags: FCVAR_ARCHIVE
-// Default: "0"
-panorama_debugger_saved_xpos "0"
-
-// Flags: FCVAR_ARCHIVE
-// Default: "0"
-panorama_debugger_saved_ypos "0"
-
 // Attachment index for attachment mode
 // Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
 // Default: "0"
@@ -8441,8 +8425,8 @@ sv_hibernate_when_empty "1"
 
 // 0 = OFF, 1 = Halloween, 2 = Winter
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// Default: "0"
-sv_holiday_mode "0"
+// Default: "1"
+sv_holiday_mode "1"
 
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_REPLICATED
 // Default: "0"
@@ -8686,10 +8670,10 @@ sv_maxroutable "1200"
 sv_maxspeed "320"
 
 // Maximum lag compensation in seconds
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Min: "0" Max: "1"
-// Default: "1.0"
-sv_maxunlag "1.0"
+// Default: "0.200"
+sv_maxunlag "0.200"
 
 // Maximum updates per second that the server will allow
 // Flags: FCVAR_REPLICATED|FCVAR_RELEASE

@@ -1,4 +1,4 @@
-// Dump of all network properties for "csgo" as at 2018/10/10
+// Dump of all network properties for "csgo" as at 2018/10/23
 //
 
 CAI_BaseNPC (type DT_AI_BaseNPC)
@@ -9008,8 +9008,9 @@ CCSPlayer (type DT_CSPlayer)
   Member: 004 (offset 16) (type integer) (bits 32) (Unsigned)
   Member: 005 (offset 20) (type integer) (bits 32) (Unsigned)
  Member: m_unMusicID (offset 5322) (type integer) (bits 16) (Unsigned)
- Member: m_bHasHelmet (offset 5404) (type integer) (bits 1) (Unsigned)
- Member: m_bHasHeavyArmor (offset 5405) (type integer) (bits 1) (Unsigned)
+ Member: m_bIsPlayerGhost (offset 5404) (type integer) (bits 1) (Unsigned)
+ Member: m_bHasHelmet (offset 5405) (type integer) (bits 1) (Unsigned)
+ Member: m_bHasHeavyArmor (offset 5406) (type integer) (bits 1) (Unsigned)
  Member: m_nHeavyAssaultSuitCooldownRemaining (offset 5408) (type integer) (bits 32) ()
  Member: m_flFlashDuration (offset 9628) (type float) (bits 0) (NoScale)
  Member: m_flFlashMaxAlpha (offset 9632) (type float) (bits 0) (NoScale)
