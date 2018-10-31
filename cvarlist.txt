@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.5.7, appid=730, map=cs_italy, totalcvar=2239
+// game=csgo, version=1.36.5.8, appid=730, map=cs_italy, totalcvar=2239
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
