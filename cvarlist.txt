@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.5.9, appid=730, map=cs_italy, totalcvar=2239
+// game=csgo, version=1.36.6.0, appid=730, map=cs_italy, totalcvar=2241
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -3856,6 +3856,16 @@ mp_defuser_allocation "2"
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED
 // Default: "0"
 mp_disable_respawn_times "0"
+
+// When a bot disconnects, kill them first.  Requires mp_disconnect_kills_players.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0"
+mp_disconnect_kills_bots "0"
+
+// When a player disconnects, kill them first (triggering item drops, stats, etc.)
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "1"
+mp_disconnect_kills_players "1"
 
 // Whether to display and score player assists
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
