@@ -37,6 +37,7 @@ assault_rallypoint
 baseprojectile
 beam
 beam_spotlight
+breachcharge_projectile
 cfe_player_decal
 chicken
 color_correction
@@ -53,8 +54,13 @@ cycler_blender
 cycler_flex
 cycler_weapon
 cycler_wreckage
+dangerzone_controller
+dangerzone_entity
 decoy_projectile
+drone
+dronegun
 dynamic_prop
+dz_door
 entity_blocker
 entityflame
 env_ambient_light
@@ -83,6 +89,7 @@ env_firesensor
 env_firesource
 env_fog_controller
 env_funnel
+env_gascanister
 env_global
 env_glow
 env_gunfire
@@ -194,6 +201,8 @@ func_reflective_glass
 func_rot_button
 func_rotating
 func_smokevolume
+func_survival_c4_target
+func_tablet_blocker
 func_tank
 func_tankairboatgun
 func_tankapcrocket
@@ -223,6 +232,7 @@ game_player_team
 game_ragdoll_manager
 game_round_end
 game_score
+game_survival_logic
 game_text
 game_ui
 game_weapon_manager
@@ -231,6 +241,7 @@ generic_actor
 gib
 gibshooter
 global_chatter
+grassburn
 grenade
 hammer_updateignorelist
 handle_dummy
@@ -248,6 +259,7 @@ info_constraint_anchor
 info_deathmatch_spawn
 info_enemy_terrorist_spawn
 info_game_event_proxy
+info_gascanister_launchpoint
 info_hint
 info_hostage_rescue_zone_hint
 info_hostage_spawn
@@ -255,6 +267,7 @@ info_intermission
 info_ladder_dismount
 info_landmark
 info_map_parameters
+info_map_region
 info_mass_center
 info_node
 info_node_air
@@ -283,6 +296,7 @@ info_view_parameters
 infodecal
 instanced_scripted_scene
 item_assaultsuit
+item_cash
 item_coop_coin
 item_cutters
 item_defuser
@@ -339,6 +353,7 @@ multisource
 npc_furniture
 npc_heardanger
 npc_vehicledriver
+paradrop_chopper
 path_corner
 path_corner_crash
 path_track
@@ -366,6 +381,7 @@ physics_prop
 physics_prop_ragdoll
 physics_prop_statue
 planted_c4
+planted_c4_survival
 planted_c4_training
 player
 player_loadsaved
@@ -381,6 +397,10 @@ point_clientcommand
 point_commentary_node
 point_commentary_viewpoint
 point_devshot_camera
+point_dz_dronegun
+point_dz_parachute
+point_dz_weaponspawn
+point_dz_weaponspawn_group
 point_enable_motion_fixup
 point_entity_finder
 point_gamestats_counter
@@ -404,6 +424,8 @@ point_viewproxy
 point_worldtext
 postprocess_controller
 predicted_viewmodel
+prop_ammo_box_generic
+prop_counter
 prop_door_rotating
 prop_dynamic
 prop_dynamic_glow
@@ -411,6 +433,10 @@ prop_dynamic_ornament
 prop_dynamic_override
 prop_exploding_barrel
 prop_hallucination
+prop_loot_crate
+prop_metal_crate
+prop_money_crate
+prop_paradrop_crate
 prop_physics
 prop_physics_multiplayer
 prop_physics_override
@@ -421,6 +447,15 @@ prop_sphere
 prop_talker
 prop_vehicle
 prop_vehicle_driveable
+prop_weapon_upgrade_armor
+prop_weapon_upgrade_armor_helmet
+prop_weapon_upgrade_chute
+prop_weapon_upgrade_contractkill
+prop_weapon_upgrade_helmet
+prop_weapon_upgrade_tablet_droneintel
+prop_weapon_upgrade_tablet_highres
+prop_weapon_upgrade_tablet_zoneintel
+radar_jammer
 raggib
 rope_anchor
 scene_manager
@@ -438,6 +473,7 @@ soundent
 spark_shower
 spotlight_end
 sunlight_shadow_control
+survival_spawn_chopper
 tagrenade_projectile
 tanktrain_ai
 tanktrain_aitarget
@@ -467,10 +503,12 @@ trigger_playermovement
 trigger_proximity
 trigger_push
 trigger_remove
+trigger_safemoneygather
 trigger_serverragdoll
 trigger_softbarrier
 trigger_soundoperator
 trigger_soundscape
+trigger_survival_playarea
 trigger_teleport
 trigger_togglesave
 trigger_tonemap
@@ -491,6 +529,7 @@ weapon_aug
 weapon_awp
 weapon_basecsgrenade
 weapon_bizon
+weapon_breachcharge
 weapon_c4
 weapon_cs_base
 weapon_csbase_gun
@@ -498,6 +537,7 @@ weapon_deagle
 weapon_decoy
 weapon_elite
 weapon_famas
+weapon_fists
 weapon_fiveseven
 weapon_flashbang
 weapon_g3sg1
@@ -515,6 +555,7 @@ weapon_m3
 weapon_m4a1
 weapon_mac10
 weapon_mag7
+weapon_melee
 weapon_molotov
 weapon_mp5navy
 weapon_mp7
@@ -533,6 +574,7 @@ weapon_sg552
 weapon_sg556
 weapon_smokegrenade
 weapon_ssg08
+weapon_tablet
 weapon_tagrenade
 weapon_taser
 weapon_tec9

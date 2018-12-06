@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.6.1, appid=730, map=cs_italy, totalcvar=2241
+// game=csgo, version=1.36.6.2, appid=730, map=cs_italy, totalcvar=2343
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -585,6 +585,10 @@ ammo_buckshot_impulse "600"
 ammo_buckshot_max "32"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "3"
+ammo_grenade_limit_breachcharge "3"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1"
 ammo_grenade_limit_default "1"
 
@@ -776,6 +780,10 @@ bot_eco_limit "2000"
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
 // Default: "0"
 bot_flipout "0"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Default: "0"
+bot_force_duck "0"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
 // Default: "0"
@@ -1242,10 +1250,6 @@ cl_decryptdata_key ""
 // Default: ""
 cl_decryptdata_key_pub ""
 
-// Flags: FCVAR_CHEAT|FCVAR_MATERIAL_SYSTEM_THREAD
-// Default: "2"
-cl_detail_scale "2"
-
 // Determines whether downloads of external resources are allowed during demo playback (0:no,1:workshop,2:all)
 // Flags: FCVAR_RELEASE
 // Default: "1"
@@ -1276,6 +1280,11 @@ cl_flushentitypacket "0"
 // Default: "0"
 cl_forcepreload "0"
 
+// Flags: FCVAR_ARCHIVE|FCVAR_RELEASE|FCVAR_MATERIAL_SYSTEM_THREAD
+// Min: "-1" Max: "1"
+// Default: "-0.5"
+cl_grass_mip_bias "-0.5"
+
 // If set to 1, server IPs will be hidden in the console (except when you type 'status')
 // Flags: FCVAR_RELEASE
 // Default: "0"
@@ -1300,6 +1309,10 @@ cl_language "english"
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "0"
 cl_playback_screenshots "0"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_MATERIAL_SYSTEM_THREAD
+// Default: "1"
+cl_proximity_grass "1"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "1"
@@ -1481,7 +1494,7 @@ con_drawnotify "1"
 // Allows the console to be activated.
 // Flags: FCVAR_ARCHIVE
 // Default: "0"
-con_enable "0"
+con_enable "1"
 
 // Filters console output based on the setting of con_filter_text. 1 filters completely, 2 displays filtered text brighter than other text.
 // Flags: FCVAR_RELEASE|FCVAR_MATERIAL_SYSTEM_THREAD
@@ -1501,7 +1514,7 @@ con_filter_text_out ""
 // Console output gets written to this file
 // Flags: FCVAR_RELEASE
 // Default: ""
-con_logfile ""
+con_logfile "last_console.log"
 
 // How long to display recent console text to the upper part of the game window
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_MATERIAL_SYSTEM_THREAD
@@ -1539,62 +1552,77 @@ console_window_open ""
 contimes "8"
 
 // amount of contribution score added for an assist
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "1"
 contributionscore_assist "1"
 
 // amount of contribution score for defusing a bomb while at least one enemy remains alive
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "3"
 contributionscore_bomb_defuse_major "3"
 
 // amount of contribution score for defusing a bomb after eliminating enemy team
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "1"
 contributionscore_bomb_defuse_minor "1"
 
 // amount of contribution score awarded to bomb planter and terrorists remaining alive if bomb explosion wins the round
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "1"
 contributionscore_bomb_exploded "1"
 
 // amount of contribution score for planting a bomb
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "2"
 contributionscore_bomb_planted "2"
 
+// amount of contribution score for picking up a cash bundle
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0"
+contributionscore_cash_bundle "0"
+
+// amount of contribution score for breaking an item crate
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0"
+contributionscore_crate_break "0"
+
 // amount of contribution score for killing a hostage, normally negative
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "-2"
 contributionscore_hostage_kill "-2"
 
 // amount of contribution score added to rescuer per hostage rescued
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "3"
 contributionscore_hostage_rescue_major "3"
 
 // amount of contribution score added to all alive CTs per hostage rescued
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "1"
 contributionscore_hostage_rescue_minor "1"
 
 // amount of contribution score added for a kill
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "2"
 contributionscore_kill "2"
 
+// percentage of victim's contribution score to award to their killer as a bonus
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0"
+contributionscore_kill_factor "0"
+
 // amount of contribution score added for an objective related kill
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "3"
 contributionscore_objective_kill "3"
 
 // amount of contribution score for a suicide, normally negative
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "-2"
 contributionscore_suicide "-2"
 
 // amount of contribution score for a team kill, normally negative
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "-2"
 contributionscore_team_kill "-2"
 
@@ -2349,9 +2377,25 @@ gpu_level "3"
 // Default: "2"
 gpu_mem_level "2"
 
-// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+healthshot_allow_use_at_full "1"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "50"
 healthshot_health "50"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+healthshot_healthboost_damage_multiplier "1"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+healthshot_healthboost_speed_multiplier "1"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+healthshot_healthboost_time "0"
 
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
 // Default: "0"
@@ -2502,10 +2546,6 @@ hostport "27015"
 // Default: "10"
 hud_jeephint_numentries "10"
 
-// Flags: FCVAR_CHEAT
-// Default: "1"
-hunk_track_allocation_types "1"
-
 // When set will ignore UI activation key
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_MATERIAL_SYSTEM
 // Default: ""
@@ -2521,7 +2561,7 @@ in_forceuser "0"
 // Default: "0.1"
 inferno_child_spawn_interval_multiplier "0.1"
 
-// Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "4"
 inferno_child_spawn_max_depth "4"
 
@@ -2535,7 +2575,7 @@ inferno_damage "40"
 inferno_debug "0"
 
 // Average lifetime of each flame in seconds
-// Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "7"
 inferno_flame_lifetime "7"
 
@@ -2564,12 +2604,12 @@ inferno_initial_spawn_interval "0.02"
 inferno_max_child_spawn_interval "0.5"
 
 // Maximum number of flames that can be created
-// Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "16"
 inferno_max_flames "16"
 
 // Maximum distance flames can spread from their initial ignition point
-// Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "150"
 inferno_max_range "150"
 
@@ -2823,6 +2863,10 @@ mat_drawTitleSafe "0"
 // Flags: FCVAR_CHEAT
 // Default: "0"
 mat_draw_resolution "0"
+
+// Flags: FCVAR_CHEAT
+// Default: "3072"
+mat_draw_resolution_threshold "3072"
 
 // Flags: FCVAR_CHEAT
 // Default: "0"
@@ -3140,8 +3184,8 @@ mat_report_queue_status "0"
 
 // Enable depth resolve to a texture. 0=disable, 1=enable via resolve tricks if supported in hw, otherwise disable, 2=force extra depth only pass
 // Flags: FCVAR_CHEAT
-// Default: "0"
-mat_resolveFullFrameDepth "0"
+// Default: "1"
+mat_resolveFullFrameDepth "1"
 
 // Flags: FCVAR_CHEAT
 // Default: "0"
@@ -3248,6 +3292,10 @@ mat_texture_list_exclude_editing "0"
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_NEVER_AS_STRING
 // Default: "1"
 mat_texture_list_view "FCVAR_NEVER_AS_STRING"
+
+// Flags: FCVAR_DEVELOPMENTONLY
+// Default: "0"
+mat_texture_tracking "0"
 
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "0"
@@ -3577,7 +3625,7 @@ mod_touchalldata "1"
 // Default: "0"
 mod_trace_load "0"
 
-// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "2.0"
 molotov_throw_detonate_time "2.0"
 
@@ -3780,22 +3828,22 @@ mp_ct_default_secondary ""
 mp_damage_headshot_only "0"
 
 // Scales the damage a CT player takes by this much when they take damage in the body. (1 == 100%, 0.5 == 50%)
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1.0"
 mp_damage_scale_ct_body "1.0"
 
 // Scales the damage a CT player takes by this much when they take damage in the head (1 == 100%, 0.5 == 50%).  REMEMBER! headshots do 4x the damage of the body before this scaler is applied.
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1.0"
 mp_damage_scale_ct_head "1.0"
 
 // Scales the damage a T player takes by this much when they take damage in the body. (1 == 100%, 0.5 == 50%)
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1.0"
 mp_damage_scale_t_body "1.0"
 
 // Scales the damage a T player takes by this much when they take damage in the head (1 == 100%, 0.5 == 50%).  REMEMBER! headshots do 4x the damage of the body before this scaler is applied.
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1.0"
 mp_damage_scale_t_head "1.0"
 
@@ -3803,6 +3851,12 @@ mp_damage_scale_t_head "1.0"
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
 mp_damage_vampiric_amount "0"
+
+// Drop breachcharge on player death
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Min: "0" Max: "1"
+// Default: "1"
+mp_death_drop_breachcharge "1"
 
 // Whether c4 is droppable
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -3826,6 +3880,12 @@ mp_death_drop_grenade "2"
 // Min: "0" Max: "2"
 // Default: "1"
 mp_death_drop_gun "1"
+
+// Drop healthshot on player death
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Min: "0" Max: "1"
+// Default: "1"
+mp_death_drop_healthshot "1"
 
 // Drop taser on player death
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -3969,6 +4029,11 @@ mp_dogtag_despawn_time "120"
 // Default: "0"
 mp_dogtag_pickup_rule "0"
 
+// Allows players to drop grenades.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0"
+mp_drop_grenade_enable "0"
+
 // Allows players to drop knives.
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "0"
@@ -4013,6 +4078,11 @@ mp_endmatch_votenextmap_wargames_nummaps "3"
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "1"
 mp_endmatch_votenextmap_wargames_nummodes "1"
+
+// Number of players required to be connected to end warmup early. 0 to require maximum players for mode.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+mp_endwarmup_player_count "0"
 
 // Reset all player equipment every N rounds (0 for never)
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -4385,6 +4455,21 @@ mp_logdetail "0"
 // Default: "0"
 mp_logdetail_items "0"
 
+// Enables distance logging every so many units
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "250"
+mp_logdistance_2d "250"
+
+// Enables distance logging every so many seconds
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "15"
+mp_logdistance_sec "15"
+
+// Enables distance logging with full loadouts
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "1"
+mp_logloadouts "1"
+
 // Enables money logging.  Values are: 0=off, 1=on
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Min: "0" Max: "1"
@@ -4410,7 +4495,7 @@ mp_match_end_restart "0"
 
 // Time (in seconds) until a match restarts.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// Min: "1" Max: "120"
+// Min: "1" Max: "9999"
 // Default: "15"
 mp_match_restart_delay "15"
 
@@ -4437,6 +4522,10 @@ mp_maxrounds "0"
 // Default: "15.0"
 mp_molotovusedelay "0"
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+mp_only_cts_rescue_hostages "1"
+
 // If a match ends in a tie, use overtime rules to determine winner
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
@@ -4456,6 +4545,10 @@ mp_overtime_maxrounds "6"
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "10000"
 mp_overtime_startmoney "10000"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+mp_plant_c4_anywhere "0"
 
 // When a player has buffer health, this is how fast it ticks down.
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
@@ -4505,6 +4598,12 @@ mp_randomspawn_dist "0"
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1"
 mp_randomspawn_los "0"
+
+// Whether guns must be +used to acquire or default is touch-to-pickup
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Min: "0" Max: "1"
+// Default: "0"
+mp_require_gun_use_to_acquire "0"
 
 // How many seconds after respawn immunity lasts.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -4661,7 +4760,7 @@ mp_t_default_primary ""
 mp_t_default_secondary ""
 
 // Scalar for player tagging modifier when hit. Lower values for greater tagging.
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1.0"
 mp_tagging_scale "1.0"
 
@@ -4863,7 +4962,15 @@ mp_warmuptime "5"
 // Default: "0"
 mp_warmuptime_all_players_connected "0"
 
-// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
+// Flags: FCVAR_GAMEDLL|FCVAR_CHEAT|FCVAR_RELEASE
+// Default: "5.0"
+mp_weapon_melee_touch_time_after_hit "5.0"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_CHEAT|FCVAR_RELEASE
+// Default: "1.3"
+mp_weapon_next_owner_touch_time "1.3"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_CHEAT|FCVAR_RELEASE
 // Default: "1.5"
 mp_weapon_prev_owner_touch_time "1.5"
 
@@ -7353,19 +7460,23 @@ snd_obscured_gain_dB "-2.70"
 // Default: "1"
 snd_occlusion "1"
 
+// Flags: FCVAR_REPLICATED|FCVAR_CHEAT
+// Default: "1"
+snd_occlusion_bounces "1"
+
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_CHEAT
 // Default: "4.0"
 snd_occlusion_collide_min_distance "4.0"
 
-// Flags: FCVAR_MATERIAL_SYSTEM|FCVAR_CHEAT
+// Flags: FCVAR_CHEAT
 // Default: "0.20"
 snd_occlusion_eq_high "0.20"
 
-// Flags: FCVAR_MATERIAL_SYSTEM|FCVAR_CHEAT
+// Flags: FCVAR_CHEAT
 // Default: "0.10"
 snd_occlusion_eq_low "0.10"
 
-// Flags: FCVAR_MATERIAL_SYSTEM|FCVAR_CHEAT
+// Flags: FCVAR_CHEAT
 // Default: "1.0"
 snd_occlusion_eq_mid "1.0"
 
@@ -7385,9 +7496,17 @@ snd_occlusion_indirect_radius "120.0"
 // Default: ""
 snd_occlusion_material_override ""
 
-// Flags: FCVAR_MATERIAL_SYSTEM|FCVAR_CHEAT
+// Flags: FCVAR_CHEAT
 // Default: "1.05"
 snd_occlusion_no_eq_scale "1.05"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_CHEAT
+// Default: ""
+snd_occlusion_pos_override ""
+
+// Flags: FCVAR_REPLICATED|FCVAR_CHEAT
+// Default: "4"
+snd_occlusion_rays "4"
 
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_CHEAT
 // Default: "0"
@@ -7637,10 +7756,6 @@ snd_surround_speakers "-1"
 // Default: "1.0"
 snd_tensecondwarning_volume "1.0"
 
-// Flags: FCVAR_MATERIAL_SYSTEM|FCVAR_ARCHIVE|FCVAR_RELEASE
-// Default: "0"
-snd_use_hrtf_onetime_reset "0"
-
 // Show sounds location in world
 // Flags: FCVAR_CHEAT
 // Default: "0"
@@ -7763,7 +7878,7 @@ spec_replay_cam_delay "5"
 // Default: "0"
 spec_replay_cam_options "0"
 
-// Enable Killer Replay, requires hltv server running.
+// Enable Killer Replay, requires hltv server running (0:off, 1:default, 2:force)
 // Flags: FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
 spec_replay_enable "1"
@@ -7777,6 +7892,11 @@ spec_replay_leadup_time "5.3438"
 // Flags: FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "9.5"
 spec_replay_message_time "9.5"
+
+// When > 0, sets the mode whereas players see delayed replay, and are segregated into a domain of chat and voice separate from the alive players
+// Flags: FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+spec_replay_on_death "0"
 
 // Base time scale of Killer Replay.Experimental.
 // Flags: FCVAR_REPLICATED|FCVAR_RELEASE
@@ -7864,12 +7984,36 @@ sv_accelerate_debug_speed "0"
 // Default: "1"
 sv_accelerate_use_weapon_speed "1"
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0.87"
+sv_air_max_horizontal_parachute_ratio "0.87"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "240"
+sv_air_max_horizontal_parachute_speed "240"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "30"
+sv_air_max_wishspeed "30"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_air_pushaway_dist "0"
+
 // Flags: FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "12"
 sv_airaccelerate "12"
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "2.6"
+sv_airaccelerate_parachute "2.6"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "2.2"
+sv_airaccelerate_rappel "2.2"
+
 // Players can receive all other players' text chat, team restrictions apply
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_NOTIFY
+// Flags: FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_RELEASE
 // Default: "1"
 sv_allchat "1"
 
@@ -8050,6 +8194,34 @@ sv_bots_get_harder_after_each_wave "0"
 sv_bounce "0"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0.3"
+sv_breachcharge_arm_delay "0.3"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0.8"
+sv_breachcharge_delay_max "0.8"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0"
+sv_breachcharge_delay_min "0"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "1200"
+sv_breachcharge_distance_max "1200"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "600"
+sv_breachcharge_distance_min "600"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "1.0"
+sv_breachcharge_fuse_max "1.0"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0.7"
+sv_breachcharge_fuse_min "0.7"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "8"
 sv_broadcast_ugc_download_progress_interval "8"
 
@@ -8066,6 +8238,10 @@ sv_buy_status_override "-1"
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "1"
 sv_cacheencodedents "1"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "-1"
+sv_chat_proximity "-1"
 
 // Allow cheats on server
 // Flags: FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -8111,6 +8287,11 @@ sv_clip_penetration_traces_to_players "1"
 // Default: "30"
 sv_clockcorrection_msecs "30"
 
+// When set, ignores coach communication restrictions.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_coach_comm_unrestricted "0"
+
 // Allows spectating and communicating with a team ( 'coach t' or 'coach ct' )
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
@@ -8150,6 +8331,10 @@ sv_contact ""
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_CHEAT
 // Default: "1"
 sv_creationtickcheck "1"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "200"
+sv_cs_player_speed_has_hostage "200"
 
 // Force cts to spawn on a bombsite
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
@@ -8233,10 +8418,9 @@ sv_disable_pas "1"
 // Default: "0"
 sv_disable_querycache "0"
 
-// Prevent the team select menu from showing.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
-sv_disable_show_team_select_menu "0"
+sv_disable_radar "0"
 
 // Turn on/off freezecam on server
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
@@ -8248,6 +8432,14 @@ sv_disablefreezecam "0"
 // Default: ""
 sv_downloadurl ""
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "2"
+sv_drowning_damage_initial "2"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "5"
+sv_drowning_damage_max "5"
+
 // Flags: FCVAR_CHEAT
 // Default: "0"
 sv_dumpstringtables "0"
@@ -8256,6 +8448,76 @@ sv_dumpstringtables "0"
 // Flags: FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
 sv_duplicate_playernames_ok "0"
+
+// Size of a cash bundle
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "50"
+sv_dz_cash_bundle_size "50"
+
+// Cash bundles to award for a successful contract kill
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "10"
+sv_dz_contractkill_reward "10"
+
+// Number of cash bundles to award for exploring a new sector
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "2"
+sv_dz_exploration_payment_amount "2"
+
+// Number of cash bundles to award for rescuing a hostage
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "10"
+sv_dz_hostage_rescue_reward "10"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "120"
+sv_dz_player_max_health "120"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0"
+sv_dz_player_spawn_armor "0"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "120"
+sv_dz_player_spawn_health "120"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "800"
+sv_dz_show_enemy_name_scope_range "800"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Default: "0"
+sv_dz_show_security_door_item_price "0"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Default: "0"
+sv_dz_show_weapon_spawns "0"
+
+// Number of players per team
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+sv_dz_team_count "1"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "1"
+sv_dz_warmup_tablet "1"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "weapon_glock"
+sv_dz_warmup_weapon "weapon_glock"
+
+// How many money stacks players are rewarded each danger zone wave
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "15"
+sv_dz_zone_bombdrop_money_reward "15"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_CHEAT|FCVAR_RELEASE
+// Default: "1"
+sv_dz_zone_damage "1"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "2200"
+sv_dz_zone_hex_radius "2200"
 
 // When enabled, this allows for entity packing to use the property changes for building up the data. This is many times faster, but can be disabled for error checking.
 // Flags: FCVAR_RELEASE
@@ -8297,10 +8559,18 @@ sv_endmatch_item_drop_interval_mythical "1.25"
 // Default: "1.0"
 sv_endmatch_item_drop_interval_rare "1.0"
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+sv_env_entity_makers_enabled "1"
+
 // Seconds after client connect during which extra frames are buffered to prevent non-delta'd update
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "15.0"
 sv_extra_client_connect_time "15.0"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_extract_ammo_from_dropped_weapons "0"
 
 // Number of degrees of aim 'fishtail' when making an extreme strafe direction change
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
@@ -8308,10 +8578,52 @@ sv_extra_client_connect_time "15.0"
 // Default: "0"
 sv_extreme_strafe_accuracy_fishtail "0"
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+sv_falldamage_scale "1"
+
+// Scale damage when distributed across two players
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+sv_falldamage_to_below_player_multiplier "1"
+
+// Landing on a another player's head gives them this ratio of the damage.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_falldamage_to_below_player_ratio "0"
+
 // Set packet filtering by IP mode
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "1"
 sv_filterban "1"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
+// Default: "1.8"
+sv_fistpoint_delay "1.8"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
+// Default: "25"
+sv_fistpunch_blocked_damage "25"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
+// Default: "10"
+sv_fistpunch_damage "10"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
+// Default: "20"
+sv_fistpunch_damage_hard "20"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
+// Default: "1.5"
+sv_fistpunch_damage_to_player_multiplier "1.5"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
+// Default: "1"
+sv_fistpunch_impact_sounds "1"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
+// Default: "40"
+sv_fistpunch_viewmove "40"
 
 // Flashbang strength
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
@@ -8328,6 +8640,10 @@ sv_footstep_sound_frequency "0.97"
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED
 // Default: "1"
 sv_footsteps "1"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_force_reflections "0"
 
 // Will transmit all entities to client, regardless of PVS conditions (will still skip based on transmit flags, however).
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
@@ -8358,6 +8674,10 @@ sv_full_alltalk "0"
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
 sv_gameinstructor_disable "0"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_grassburn "0"
 
 // World gravity.
 // Flags: FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -8407,6 +8727,22 @@ sv_guardian_max_wave_for_heavy "0"
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "0"
 sv_guardian_min_wave_for_heavy "0"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_health_approach_enabled "0"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "10"
+sv_health_approach_speed "10"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+sv_hegrenade_damage_multiplier "1"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+sv_hegrenade_radius_multiplier "1"
 
 // # of milliseconds to sleep per frame while hibernating
 // Flags: FCVAR_RELEASE
@@ -8473,6 +8809,10 @@ sv_kick_ban_duration "15"
 // Default: "1"
 sv_kick_players_with_cooldown "1"
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_knife_attack_extend_from_player_aabb "0"
+
 // Cos of angle of incidence to ladder perpendicular for applying ladder_dampen
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
 // Min: "-1" Max: "1"
@@ -8515,6 +8855,15 @@ sv_lagpushticks "0"
 // Flags: FCVAR_RELEASE
 // Default: "0"
 sv_lan "0"
+
+// 1=Only improves success of jump+ducks to windows or vents (jump+duck to duck), 2=Improves success of all jump+ducks to ledges, 3=if you can get your eyes above it, you'll pull yourself up
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+sv_ledge_mantle_helper "1"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
+// Default: "0"
+sv_ledge_mantle_helper_debug "0"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: ""
@@ -8820,6 +9169,10 @@ sv_occlude_players "1"
 // Default: "1"
 sv_optimizedmovement "1"
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_outofammo_indicator "0"
+
 // Flags: FCVAR_RELEASE
 // Default: "1"
 sv_parallel_packentities "1"
@@ -8828,14 +9181,6 @@ sv_parallel_packentities "1"
 // Flags: FCVAR_RELEASE
 // Default: "0"
 sv_parallel_send "0"
-
-// Flags: FCVAR_RELEASE
-// Default: "0"
-sv_parallel_send_aggressive "0"
-
-// Flags: FCVAR_RELEASE
-// Default: "1"
-sv_parallel_send_v "1"
 
 // Flags: FCVAR_RELEASE
 // Default: "1"
@@ -8875,11 +9220,19 @@ sv_penetration_type "1"
 // Default: "0"
 sv_phys_props_block_movers "0"
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "-200"
+sv_player_parachute_velocity "-200"
+
 // Number of samples to maintain in player perf history
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
 // Min: "1" Max: "128"
 // Default: "20"
 sv_playerperfhistorycount "20"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+sv_prop_door_open_speed_scale "1"
 
 // Minimum number of file hashes to agree to form a consensus.
 // Flags: FCVAR_RELEASE
@@ -9096,6 +9449,11 @@ sv_show_bot_difficulty_in_name "0"
 // Default: "0"
 sv_show_cull_props "0"
 
+// Force on if not prohibited
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_show_team_equipment_force_on "0"
+
 // Determines whether +cl_show_team_equipment is prohibited.
 // Flags: FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
@@ -9204,6 +9562,10 @@ sv_soundemitter_version "2"
 // Default: "15"
 sv_spawn_afk_bomb_drop_time "15"
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "8.0"
+sv_spawn_rappel_min_duration "8.0"
+
 // Determines who spectators can hear: 0: only spectators; 1: all players; 2: spectated team; 3: self only; 4: nobody
 // Flags: FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1"
@@ -9254,6 +9616,10 @@ sv_staminamax "80"
 // Default: "60"
 sv_staminarecoveryrate "60"
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0.7"
+sv_standable_normal "0.7"
+
 // Collect CPU usage stats
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "1"
@@ -9297,6 +9663,10 @@ sv_strict_notarget "0"
 // Default: "0"
 sv_suppress_viewpunch "0"
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_tablet_show_path_to_nearest_resq "0"
+
 // Server tags. Used to provide extra information to clients when they're browsing for servers. Separate tags with a comma.
 // Flags: FCVAR_NOTIFY|FCVAR_RELEASE
 // Default: ""
@@ -9327,15 +9697,20 @@ sv_teamid_overhead "1"
 // Default: "0"
 sv_teamid_overhead_always_prohibit "0"
 
+// If >0, server will override cl_teamid_overhead_maxdist
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_teamid_overhead_maxdist "0"
+
+// If >0, server will override cl_teamid_overhead_maxdist_spec
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_teamid_overhead_maxdist_spec "0"
+
 // Buffer size for writing string table baselines
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "131072"
 sv_temp_baseline_string_table_buffer_size "131072"
-
-// Ask GC to map our IP to a particular data center token.  Token may be specified as dotted-decimal IP, known SDR data center code, or any other arbitrary 3- or 4- character string used as a secret key.
-// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
-// Default: ""
-sv_test_data_center_token ""
 
 // Tests for scripted sequences that are embedded in the world. Run through your map with this set to check for NPCs falling through the world.
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
@@ -9374,6 +9749,18 @@ sv_timeout "65"
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
 // Default: "0"
 sv_turbophysics "0"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT|FCVAR_RELEASE
+// Default: "4"
+sv_turning_inaccuracy_angle_min "4"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT|FCVAR_RELEASE
+// Default: "0.8"
+sv_turning_inaccuracy_decay "0.8"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT|FCVAR_RELEASE
+// Default: "0"
+sv_turning_inaccuracy_enabled "0"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "1000"
@@ -9422,9 +9809,21 @@ sv_vehicle_autoaim_scale "8"
 // Default: "-1"
 sv_visiblemaxplayers "-1"
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "-1"
+sv_voice_proximity "-1"
+
 // Flags: FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
+sv_voice_proximity_minvolume "0"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
 sv_voice_proximity_positional "0"
+
+// Flags: FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_voice_proximity_use_falloff "0"
 
 // Specifies which voice codec DLL to use in a game. Set to the name of the DLL without the extension.
 // Flags: FCVAR_REPLICATED|FCVAR_RELEASE
@@ -9572,6 +9971,18 @@ sv_vote_timer_duration "15"
 // Default: "0"
 sv_vote_to_changelevel_before_match_point "1"
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0.7"
+sv_walkable_normal "0.7"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0.8"
+sv_water_movespeed_multiplier "0.8"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_water_swim_mode "0"
+
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "10"
 sv_wateraccelerate "10"
@@ -9584,6 +9995,18 @@ sv_waterdist "12"
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1"
 sv_waterfriction "1"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0.85"
+sv_weapon_encumbrance_per_item "0.85"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_weapon_encumbrance_scale "0"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "1"
+sv_weapon_require_use_grace_period "1"
 
 // When hosting a workshop collection, users can play other workshop map on this server when it is empty and then mapcycle into this server collection.
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
@@ -9598,6 +10021,14 @@ sys_minidumpexpandedspew "0"
 // Flags: FCVAR_RELEASE
 // Default: "500"
 sys_minidumpspewlines "500"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "3000"
+tablet_c4_dist_max "3000"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "400"
+tablet_c4_dist_min "400"
 
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
 // Default: "0"
@@ -10507,6 +10938,11 @@ weapon_reticle_knife_show "0"
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
 // Default: "0"
 weapon_showproficiency "0"
+
+// Scaling for falloff of weapon firing sounds
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT|FCVAR_RELEASE
+// Default: "1.0"
+weapon_sound_falloff_multiplier "1.0"
 
 // time remaining in trial mode
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_SS|FCVAR_ARCHIVE_XBOX

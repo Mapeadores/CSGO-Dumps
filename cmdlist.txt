@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.6.1, appid=730, map=cs_italy, totalcmd=844
+// game=csgo, version=1.36.6.2, appid=730, map=cs_italy, totalcmd=848
 
 +mat_texture_list
 
@@ -677,6 +677,13 @@ dumpgamestringtable
 // Print string tables to console.
 dumpstringtables
 
+// Shuffle all teams for Danger Zone
+// Flags: FCVAR_GAMEDLL
+dz_shuffle_teams
+
+// Flags: FCVAR_GAMEDLL|FCVAR_PRINTABLEONLY
+dz_spawnselect_choose_hex
+
 // Echo text to console.
 // Flags: FCVAR_SERVER_CAN_EXECUTE
 echo
@@ -1049,9 +1056,6 @@ host_writeconfig
 
 // Store current settings to config.cfg (or specified .cfg file) with first param as splitscreen index.
 host_writeconfig_ss
-
-// Flags: FCVAR_CLIENTCMD_CAN_EXECUTE
-hunk_print_allocations
 
 // Hurts the player.
 // 	Arguments: <health to lose>
@@ -2077,6 +2081,10 @@ occlusion_stats
 // Flags: FCVAR_DEVELOPMENTONLY
 panorama_dump_deny_input
 
+// equips parachute
+// Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
+parachute
+
 // Dispatches the test particle system with the parameters specified in particle_test_file,
 //  particle_test_attach_mode and particle_test_attach_param on the entity the player is looking at.
 // 	Arguments:   	{entity_name} / {class_name} / no argument picks what player is looking at 
@@ -2672,6 +2680,10 @@ stuffcmds
 // Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
 surfaceprop
 
+// print out a number of all possible final zone
+// Flags: FCVAR_GAMEDLL
+survival_check_num_possible_final_zone
+
 // Force start the benchmark. This is only for debugging. It's better to set sv_benchmark to 1 and restart the level.
 // Flags: FCVAR_GAMEDLL
 sv_benchmark_force_start
@@ -2692,6 +2704,9 @@ sv_dump_class_table
 
 // Dump serialized entity allocations stats.
 sv_dump_serialized_entities_mem
+
+// Flags: FCVAR_GAMEDLL
+sv_dz_reset_danger_zone
 
 // Find sound names which reference the specified wave files.
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
