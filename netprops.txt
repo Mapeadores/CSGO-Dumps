@@ -1,4 +1,4 @@
-// Dump of all network properties for "csgo" as at 2018/11/15
+// Dump of all network properties for "csgo" as at 2018/12/06
 //
 
 CAI_BaseNPC (type DT_AI_BaseNPC)
