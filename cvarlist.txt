@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.6.2, appid=730, map=cs_italy, totalcvar=2343
+// game=csgo, version=1.36.6.4, appid=730, map=cs_italy, totalcvar=2344
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -1494,7 +1494,7 @@ con_drawnotify "1"
 // Allows the console to be activated.
 // Flags: FCVAR_ARCHIVE
 // Default: "0"
-con_enable "1"
+con_enable "0"
 
 // Filters console output based on the setting of con_filter_text. 1 filters completely, 2 displays filtered text brighter than other text.
 // Flags: FCVAR_RELEASE|FCVAR_MATERIAL_SYSTEM_THREAD
@@ -1514,7 +1514,7 @@ con_filter_text_out ""
 // Console output gets written to this file
 // Flags: FCVAR_RELEASE
 // Default: ""
-con_logfile "last_console.log"
+con_logfile ""
 
 // How long to display recent console text to the upper part of the game window
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_MATERIAL_SYSTEM_THREAD
@@ -3182,8 +3182,9 @@ mat_rendered_faces_count "0"
 // Default: "0"
 mat_report_queue_status "0"
 
-// Enable depth resolve to a texture. 0=disable, 1=enable via resolve tricks if supported in hw, otherwise disable, 2=force extra depth only pass
-// Flags: FCVAR_CHEAT
+// Enable depth resolve to a texture. 1=enable via resolve tricks if supported in hw, otherwise disable, 2=force extra depth only pass
+// Flags: FCVAR_DEVELOPMENTONLY
+// Min: "1" Max: "2"
 // Default: "1"
 mat_resolveFullFrameDepth "1"
 
@@ -7252,6 +7253,11 @@ snd_dvar_dist_max "1320"
 // Flags: FCVAR_CHEAT
 // Default: "240"
 snd_dvar_dist_min "240"
+
+// Relative volume of the Danger Zone victory music.
+// Flags: FCVAR_ARCHIVE|FCVAR_RELEASE
+// Default: "0.2"
+snd_dzmusic_volume "0.2"
 
 // Flags: FCVAR_CHEAT
 // Default: ""
