@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.6.4, appid=730, map=cs_italy, totalcvar=2344
+// game=csgo, version=1.36.6.6, appid=730, map=cs_italy, totalcvar=2347
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -8455,6 +8455,11 @@ sv_dumpstringtables "0"
 // Default: "0"
 sv_duplicate_playernames_ok "0"
 
+// Whether players are automatically assigned a DZ team
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "1"
+sv_dz_autojointeam "1"
+
 // Size of a cash bundle
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "50"
@@ -8474,6 +8479,11 @@ sv_dz_exploration_payment_amount "2"
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "10"
 sv_dz_hostage_rescue_reward "10"
+
+// Whether non-server admins are allowed to use the dz_jointeam command
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0"
+sv_dz_jointeam_allowed "0"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "120"
@@ -9235,6 +9245,11 @@ sv_player_parachute_velocity "-200"
 // Min: "1" Max: "128"
 // Default: "20"
 sv_playerperfhistorycount "20"
+
+// When this setting is enabled only prime users can connect to this game server.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0"
+sv_prime_accounts_only "0"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1"

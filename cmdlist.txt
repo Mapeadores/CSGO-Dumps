@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.6.4, appid=730, map=cs_italy, totalcmd=848
+// game=csgo, version=1.36.6.6, appid=730, map=cs_italy, totalcmd=850
 
 +mat_texture_list
 
@@ -676,6 +676,14 @@ dumpgamestringtable
 
 // Print string tables to console.
 dumpstringtables
+
+// Clear all DZ teams
+// Flags: FCVAR_GAMEDLL
+dz_clearteams
+
+// dz_jointeam team# [userid#|name] - Join DZ team N (0 to leave your team).  Server admins can assign other players to teams.
+// Flags: FCVAR_GAMEDLL|FCVAR_PRINTABLEONLY
+dz_jointeam
 
 // Shuffle all teams for Danger Zone
 // Flags: FCVAR_GAMEDLL
