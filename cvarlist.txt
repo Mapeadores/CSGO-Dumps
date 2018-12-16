@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.6.6, appid=730, map=cs_italy, totalcvar=2347
+// game=csgo, version=1.36.6.8, appid=730, map=cs_italy, totalcvar=2347
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -7825,8 +7825,8 @@ soundscape_debug "0"
 
 // SourceMod Version
 // Flags: FCVAR_SPONLY|FCVAR_NOTIFY
-// Default: "1.9.0.6256"
-sourcemod_version "1.9.0.6256"
+// Default: "1.9.0.6267"
+sourcemod_version "1.9.0.6267"
 
 // If nonzero, allow free-roaming spectator camera.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
