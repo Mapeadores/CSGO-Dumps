@@ -61,6 +61,7 @@ drone
 dronegun
 dynamic_prop
 dz_door
+ent_snowball_pile
 entity_blocker
 entityflame
 env_ambient_light
@@ -469,6 +470,7 @@ simple_physics_prop
 sky_camera
 skybox_swapper
 smokegrenade_projectile
+snowball_projectile
 soundent
 spark_shower
 spotlight_end
@@ -573,6 +575,7 @@ weapon_sg550
 weapon_sg552
 weapon_sg556
 weapon_smokegrenade
+weapon_snowball
 weapon_ssg08
 weapon_tablet
 weapon_tagrenade

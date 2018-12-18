@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.6.9, appid=730, map=cs_italy, totalcvar=2347
+// game=csgo, version=1.36.7.0, appid=730, map=cs_italy, totalcvar=2349
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -595,6 +595,10 @@ ammo_grenade_limit_default "1"
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1"
 ammo_grenade_limit_flashbang "1"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "3"
+ammo_grenade_limit_snowballs "3"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "3"
@@ -3182,9 +3186,8 @@ mat_rendered_faces_count "0"
 // Default: "0"
 mat_report_queue_status "0"
 
-// Enable depth resolve to a texture. 1=enable via resolve tricks if supported in hw, otherwise disable, 2=force extra depth only pass
-// Flags: FCVAR_DEVELOPMENTONLY
-// Min: "1" Max: "2"
+// Enable depth resolve to a texture. 0=disable, 1=enable via resolve tricks if supported in hw, otherwise disable, 2=force extra depth only pass
+// Flags: FCVAR_CHEAT
 // Default: "1"
 mat_resolveFullFrameDepth "1"
 
@@ -6476,11 +6479,11 @@ r_snapportal "-1"
 // Default: "0"
 r_staticlight_mode "0"
 
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_MATERIAL_SYSTEM|FCVAR_MATERIAL_SYSTEM_THREAD
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_MATERIAL_SYSTEM
 // Default: "1"
-r_staticlight_streams "1"
+r_staticlight_streams "3"
 
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_MATERIAL_SYSTEM|FCVAR_MATERIAL_SYSTEM_THREAD
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_MATERIAL_SYSTEM
 // Default: "-"
 r_staticlight_streams_indirect_only "-"
 
@@ -8787,8 +8790,8 @@ sv_hibernate_when_empty "1"
 
 // 0 = OFF, 1 = Halloween, 2 = Winter
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// Default: "0"
-sv_holiday_mode "0"
+// Default: "2"
+sv_holiday_mode "2"
 
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_REPLICATED
 // Default: "0"
@@ -9561,6 +9564,12 @@ sv_skirmish_id "0"
 // Flags: FCVAR_GAMEDLL|FCVAR_ARCHIVE|FCVAR_REPLICATED
 // Default: "sky_urb01"
 sv_skyname "italy"
+
+// Snowball strength
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
+// Min: "2" Max: "64"
+// Default: "12.0"
+sv_snowball_strength "12.0"
 
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "1"
