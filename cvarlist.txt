@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.7.2, appid=730, map=cs_italy, totalcvar=2349
+// game=csgo, version=1.36.7.3, appid=730, map=cs_italy, totalcvar=2350
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -8790,8 +8790,8 @@ sv_hibernate_when_empty "1"
 
 // 0 = OFF, 1 = Halloween, 2 = Winter
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// Default: "2"
-sv_holiday_mode "2"
+// Default: "0"
+sv_holiday_mode "0"
 
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_REPLICATED
 // Default: "0"
@@ -8883,6 +8883,11 @@ sv_ledge_mantle_helper "1"
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
 // Default: "0"
 sv_ledge_mantle_helper_debug "0"
+
+// 1=only does the feature if running in game mode Danger Zone, 0=Doesn't check game mode to run
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_ledge_mantle_helper_dzonly "0"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: ""
