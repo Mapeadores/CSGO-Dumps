@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.7.3, appid=730, map=cs_italy, totalcvar=2350
+// game=csgo, version=1.36.7.6, appid=730, map=cs_italy, totalcvar=2352
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -10217,10 +10217,20 @@ tv_broadcast_drop_fragments "0"
 // Default: "3"
 tv_broadcast_keyframe_interval "3"
 
+// The frequency, in seconds, of sending keyframes and delta fragments to the broadcast1 relay server
+// Flags: FCVAR_RELEASE
+// Default: "3"
+tv_broadcast_keyframe_interval1 "3"
+
 // Max number of broadcast http requests in flight. If there is a network issue, the requests may start piling up, degrading server performance. If more than the specified number of requests are in flight, the new requests are dropped.
 // Flags: FCVAR_RELEASE
 // Default: "20"
 tv_broadcast_max_requests "20"
+
+// Max number of broadcast1 http requests in flight. If there is a network issue, the requests may start piling up, degrading server performance. If more than the specified number of requests are in flight, the new requests are dropped.
+// Flags: FCVAR_RELEASE
+// Default: "20"
+tv_broadcast_max_requests1 "20"
 
 // X-Origin-Auth header of the broadcast POSTs
 // Flags: FCVAR_MATERIAL_SYSTEM|FCVAR_RELEASE

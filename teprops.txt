@@ -1,0 +1,715 @@
+"TempEnts"
+{
+	"CTEWorldDecal"
+	{
+		"name"		"World Decal"
+		"index"		"0"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_nIndex"		"int"
+		}
+	}
+	"CTESpriteSpray"
+	{
+		"name"		"Sprite Spray"
+		"index"		"1"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_vecDirection"		"vector"
+			"m_nModelIndex"		"int"
+			"m_fNoise"		"float"
+			"m_nSpeed"		"int"
+			"m_nCount"		"int"
+		}
+	}
+	"CTESprite"
+	{
+		"name"		"Sprite"
+		"index"		"2"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_nModelIndex"		"int"
+			"m_fScale"		"float"
+			"m_nBrightness"		"int"
+		}
+	}
+	"CTESparks"
+	{
+		"name"		"Sparks"
+		"index"		"3"
+		"SendTable"
+		{
+			"m_vecOrigin[0]"		"float"
+			"m_vecOrigin[1]"		"float"
+			"m_vecOrigin[2]"		"float"
+			"m_nMagnitude"		"int"
+			"m_nTrailLength"		"int"
+			"m_vecDir"		"vector"
+		}
+	}
+	"CTESmoke"
+	{
+		"name"		"Smoke"
+		"index"		"4"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_nModelIndex"		"int"
+			"m_fScale"		"float"
+			"m_nFrameRate"		"int"
+		}
+	}
+	"CTEShowLine"
+	{
+		"name"		"Show Line"
+		"index"		"5"
+		"SendTable"
+		{
+			"m_vecOrigin[0]"		"float"
+			"m_vecOrigin[1]"		"float"
+			"m_vecOrigin[2]"		"float"
+			"m_vecEnd"		"vector"
+		}
+	}
+	"CTEProjectedDecal"
+	{
+		"name"		"Projected Decal"
+		"index"		"6"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_angRotation"		"vector"
+			"m_flDistance"		"float"
+			"m_nIndex"		"int"
+		}
+	}
+	"CTEPlayerDecal"
+	{
+		"name"		"Player Decal"
+		"index"		"7"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_vecStart"		"vector"
+			"m_vecRight"		"vector"
+			"m_nEntity"		"int"
+			"m_nPlayer"		"int"
+			"m_nHitbox"		"int"
+		}
+	}
+	"CTEPhysicsProp"
+	{
+		"name"		"physicsprop"
+		"index"		"8"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_angRotation[0]"		"float"
+			"m_angRotation[1]"		"float"
+			"m_angRotation[2]"		"float"
+			"m_vecVelocity"		"vector"
+			"m_nModelIndex"		"int"
+			"m_nSkin"		"int"
+			"m_nFlags"		"int"
+			"m_nEffects"		"int"
+			"m_clrRender"		"int"
+		}
+	}
+	"CTEMuzzleFlash"
+	{
+		"name"		"MuzzleFlash"
+		"index"		"9"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_vecAngles"		"vector"
+			"m_flScale"		"float"
+			"m_nType"		"int"
+		}
+	}
+	"CTELargeFunnel"
+	{
+		"name"		"Large Funnel"
+		"index"		"10"
+		"SendTable"
+		{
+			"m_vecOrigin[0]"		"float"
+			"m_vecOrigin[1]"		"float"
+			"m_vecOrigin[2]"		"float"
+			"m_nModelIndex"		"int"
+			"m_nReversed"		"int"
+		}
+	}
+	"CTEKillPlayerAttachments"
+	{
+		"name"		"KillPlayerAttachments"
+		"index"		"11"
+		"SendTable"
+		{
+			"m_nPlayer"		"int"
+		}
+	}
+	"CTEImpact"
+	{
+		"name"		"Impact"
+		"index"		"12"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_vecNormal"		"vector"
+			"m_iType"		"int"
+		}
+	}
+	"CTEGlowSprite"
+	{
+		"name"		"GlowSprite"
+		"index"		"13"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_nModelIndex"		"int"
+			"m_fScale"		"float"
+			"m_fLife"		"float"
+			"m_nBrightness"		"int"
+		}
+	}
+	"CTEShatterSurface"
+	{
+		"name"		"Surface Shatter"
+		"index"		"14"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_vecAngles"		"vector"
+			"m_vecForce"		"vector"
+			"m_vecForcePos"		"vector"
+			"m_flWidth"		"float"
+			"m_flHeight"		"float"
+			"m_flShardSize"		"float"
+			"m_nSurfaceType"		"int"
+			"m_uchFrontColor[0]"		"int"
+			"m_uchFrontColor[1]"		"int"
+			"m_uchFrontColor[2]"		"int"
+			"m_uchBackColor[0]"		"int"
+			"m_uchBackColor[1]"		"int"
+			"m_uchBackColor[2]"		"int"
+		}
+	}
+	"CTEGaussExplosion"
+	{
+		"name"		"GaussExplosion"
+		"index"		"15"
+		"SendTable"
+		{
+			"m_vecOrigin[0]"		"float"
+			"m_vecOrigin[1]"		"float"
+			"m_vecOrigin[2]"		"float"
+			"m_nType"		"int"
+			"m_vecDirection"		"vector"
+		}
+	}
+	"CTEFootprintDecal"
+	{
+		"name"		"Footprint Decal"
+		"index"		"16"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_vecDirection"		"vector"
+			"m_nEntity"		"int"
+			"m_nIndex"		"int"
+			"m_chMaterialType"		"int"
+		}
+	}
+	"CTEFizz"
+	{
+		"name"		"Fizz"
+		"index"		"17"
+		"SendTable"
+		{
+			"m_nEntity"		"int"
+			"m_nModelIndex"		"int"
+			"m_nDensity"		"int"
+			"m_nCurrent"		"int"
+		}
+	}
+	"CTEExplosion"
+	{
+		"name"		"Explosion"
+		"index"		"18"
+		"SendTable"
+		{
+			"m_vecOrigin[0]"		"float"
+			"m_vecOrigin[1]"		"float"
+			"m_vecOrigin[2]"		"float"
+			"m_nModelIndex"		"int"
+			"m_fScale"		"float"
+			"m_nFrameRate"		"int"
+			"m_nFlags"		"int"
+			"m_vecNormal"		"vector"
+			"m_chMaterialType"		"int"
+			"m_nRadius"		"int"
+			"m_nMagnitude"		"int"
+		}
+	}
+	"CTEEnergySplash"
+	{
+		"name"		"Energy Splash"
+		"index"		"19"
+		"SendTable"
+		{
+			"m_vecPos"		"vector"
+			"m_vecDir"		"vector"
+			"m_bExplosive"		"int"
+		}
+	}
+	"CTEEffectDispatch"
+	{
+		"name"		"EffectDispatch"
+		"index"		"20"
+		"SendTable"
+		{
+			"m_vOrigin.x"		"float"
+			"m_vOrigin.y"		"float"
+			"m_vOrigin.z"		"float"
+			"m_vStart.x"		"float"
+			"m_vStart.y"		"float"
+			"m_vStart.z"		"float"
+			"m_vAngles"		"vector"
+			"m_vNormal"		"vector"
+			"m_fFlags"		"int"
+			"m_flMagnitude"		"float"
+			"m_flScale"		"float"
+			"m_nAttachmentIndex"		"int"
+			"m_nSurfaceProp"		"int"
+			"m_iEffectName"		"int"
+			"m_nMaterial"		"int"
+			"m_nDamageType"		"int"
+			"m_nHitBox"		"int"
+			"entindex"		"int"
+			"m_nOtherEntIndex"		"int"
+			"m_nColor"		"int"
+			"m_flRadius"		"float"
+			"m_bPositionsAreRelativeToEntity"		"int"
+		}
+	}
+	"CTEDynamicLight"
+	{
+		"name"		"Dynamic Light"
+		"index"		"21"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"r"		"int"
+			"g"		"int"
+			"b"		"int"
+			"exponent"		"int"
+			"m_fRadius"		"float"
+			"m_fTime"		"float"
+			"m_fDecay"		"float"
+		}
+	}
+	"CTEDecal"
+	{
+		"name"		"Entity Decal"
+		"index"		"22"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_vecStart"		"vector"
+			"m_nEntity"		"int"
+			"m_nHitbox"		"int"
+			"m_nIndex"		"int"
+		}
+	}
+	"CTEClientProjectile"
+	{
+		"name"		"Client Projectile"
+		"index"		"23"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_vecVelocity"		"vector"
+			"m_nModelIndex"		"int"
+			"m_nLifeTime"		"int"
+			"m_hOwner"		"int"
+		}
+	}
+	"CTEBubbleTrail"
+	{
+		"name"		"Bubble Trail"
+		"index"		"24"
+		"SendTable"
+		{
+			"m_vecMins"		"vector"
+			"m_vecMaxs"		"vector"
+			"m_nModelIndex"		"int"
+			"m_flWaterZ"		"float"
+			"m_nCount"		"int"
+			"m_fSpeed"		"float"
+		}
+	}
+	"CTEBubbles"
+	{
+		"name"		"Bubbles"
+		"index"		"25"
+		"SendTable"
+		{
+			"m_vecMins"		"vector"
+			"m_vecMaxs"		"vector"
+			"m_nModelIndex"		"int"
+			"m_fHeight"		"float"
+			"m_nCount"		"int"
+			"m_fSpeed"		"float"
+		}
+	}
+	"CTEBSPDecal"
+	{
+		"name"		"BSP Decal"
+		"index"		"26"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_nEntity"		"int"
+			"m_nIndex"		"int"
+		}
+	}
+	"CTEBreakModel"
+	{
+		"name"		"breakmodel"
+		"index"		"27"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_angRotation[0]"		"float"
+			"m_angRotation[1]"		"float"
+			"m_angRotation[2]"		"float"
+			"m_vecSize"		"vector"
+			"m_vecVelocity"		"vector"
+			"m_nModelIndex"		"int"
+			"m_nRandomization"		"int"
+			"m_nCount"		"int"
+			"m_fTime"		"float"
+			"m_nFlags"		"int"
+		}
+	}
+	"CTEBloodStream"
+	{
+		"name"		"Blood Stream"
+		"index"		"28"
+		"SendTable"
+		{
+			"m_vecOrigin[0]"		"float"
+			"m_vecOrigin[1]"		"float"
+			"m_vecOrigin[2]"		"float"
+			"m_vecDirection"		"vector"
+			"r"		"int"
+			"g"		"int"
+			"b"		"int"
+			"a"		"int"
+			"m_nAmount"		"int"
+		}
+	}
+	"CTEBloodSprite"
+	{
+		"name"		"Blood Sprite"
+		"index"		"29"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_vecDirection"		"vector"
+			"r"		"int"
+			"g"		"int"
+			"b"		"int"
+			"a"		"int"
+			"m_nSprayModel"		"int"
+			"m_nDropModel"		"int"
+			"m_nSize"		"int"
+		}
+	}
+	"CTEBeamSpline"
+	{
+		"name"		"BeamSpline"
+		"index"		"30"
+		"SendTable"
+		{
+			"m_nPoints"		"int"
+			"m_vecPoints"		"vector"
+			"m_vecPoints"		"array"
+		}
+	}
+	"CTEBeamRingPoint"
+	{
+		"name"		"BeamRingPoint"
+		"index"		"31"
+		"SendTable"
+		{
+			"m_nModelIndex"		"int"
+			"m_nHaloIndex"		"int"
+			"m_nStartFrame"		"int"
+			"m_nFrameRate"		"int"
+			"m_fLife"		"float"
+			"m_fWidth"		"float"
+			"m_fEndWidth"		"float"
+			"m_nFadeLength"		"int"
+			"m_fAmplitude"		"float"
+			"m_nSpeed"		"int"
+			"r"		"int"
+			"g"		"int"
+			"b"		"int"
+			"a"		"int"
+			"m_nFlags"		"int"
+			"m_vecCenter"		"vector"
+			"m_flStartRadius"		"float"
+			"m_flEndRadius"		"float"
+		}
+	}
+	"CTEBeamRing"
+	{
+		"name"		"BeamRing"
+		"index"		"32"
+		"SendTable"
+		{
+			"m_nModelIndex"		"int"
+			"m_nHaloIndex"		"int"
+			"m_nStartFrame"		"int"
+			"m_nFrameRate"		"int"
+			"m_fLife"		"float"
+			"m_fWidth"		"float"
+			"m_fEndWidth"		"float"
+			"m_nFadeLength"		"int"
+			"m_fAmplitude"		"float"
+			"m_nSpeed"		"int"
+			"r"		"int"
+			"g"		"int"
+			"b"		"int"
+			"a"		"int"
+			"m_nFlags"		"int"
+			"m_nStartEntity"		"int"
+			"m_nEndEntity"		"int"
+		}
+	}
+	"CTEBeamPoints"
+	{
+		"name"		"BeamPoints"
+		"index"		"33"
+		"SendTable"
+		{
+			"m_nModelIndex"		"int"
+			"m_nHaloIndex"		"int"
+			"m_nStartFrame"		"int"
+			"m_nFrameRate"		"int"
+			"m_fLife"		"float"
+			"m_fWidth"		"float"
+			"m_fEndWidth"		"float"
+			"m_nFadeLength"		"int"
+			"m_fAmplitude"		"float"
+			"m_nSpeed"		"int"
+			"r"		"int"
+			"g"		"int"
+			"b"		"int"
+			"a"		"int"
+			"m_nFlags"		"int"
+			"m_vecStartPoint"		"vector"
+			"m_vecEndPoint"		"vector"
+		}
+	}
+	"CTEBeamLaser"
+	{
+		"name"		"BeamLaser"
+		"index"		"34"
+		"SendTable"
+		{
+			"m_nModelIndex"		"int"
+			"m_nHaloIndex"		"int"
+			"m_nStartFrame"		"int"
+			"m_nFrameRate"		"int"
+			"m_fLife"		"float"
+			"m_fWidth"		"float"
+			"m_fEndWidth"		"float"
+			"m_nFadeLength"		"int"
+			"m_fAmplitude"		"float"
+			"m_nSpeed"		"int"
+			"r"		"int"
+			"g"		"int"
+			"b"		"int"
+			"a"		"int"
+			"m_nFlags"		"int"
+			"m_nStartEntity"		"int"
+			"m_nEndEntity"		"int"
+		}
+	}
+	"CTEBeamFollow"
+	{
+		"name"		"BeamFollow"
+		"index"		"35"
+		"SendTable"
+		{
+			"m_nModelIndex"		"int"
+			"m_nHaloIndex"		"int"
+			"m_nStartFrame"		"int"
+			"m_nFrameRate"		"int"
+			"m_fLife"		"float"
+			"m_fWidth"		"float"
+			"m_fEndWidth"		"float"
+			"m_nFadeLength"		"int"
+			"m_fAmplitude"		"float"
+			"m_nSpeed"		"int"
+			"r"		"int"
+			"g"		"int"
+			"b"		"int"
+			"a"		"int"
+			"m_nFlags"		"int"
+			"m_iEntIndex"		"int"
+		}
+	}
+	"CTEBeamEnts"
+	{
+		"name"		"BeamEnts"
+		"index"		"36"
+		"SendTable"
+		{
+			"m_nModelIndex"		"int"
+			"m_nHaloIndex"		"int"
+			"m_nStartFrame"		"int"
+			"m_nFrameRate"		"int"
+			"m_fLife"		"float"
+			"m_fWidth"		"float"
+			"m_fEndWidth"		"float"
+			"m_nFadeLength"		"int"
+			"m_fAmplitude"		"float"
+			"m_nSpeed"		"int"
+			"r"		"int"
+			"g"		"int"
+			"b"		"int"
+			"a"		"int"
+			"m_nFlags"		"int"
+			"m_nStartEntity"		"int"
+			"m_nEndEntity"		"int"
+		}
+	}
+	"CTEBeamEntPoint"
+	{
+		"name"		"BeamEntPoint"
+		"index"		"37"
+		"SendTable"
+		{
+			"m_nModelIndex"		"int"
+			"m_nHaloIndex"		"int"
+			"m_nStartFrame"		"int"
+			"m_nFrameRate"		"int"
+			"m_fLife"		"float"
+			"m_fWidth"		"float"
+			"m_fEndWidth"		"float"
+			"m_nFadeLength"		"int"
+			"m_fAmplitude"		"float"
+			"m_nSpeed"		"int"
+			"r"		"int"
+			"g"		"int"
+			"b"		"int"
+			"a"		"int"
+			"m_nFlags"		"int"
+			"m_nStartEntity"		"int"
+			"m_nEndEntity"		"int"
+			"m_vecStartPoint"		"vector"
+			"m_vecEndPoint"		"vector"
+		}
+	}
+	"CTEArmorRicochet"
+	{
+		"name"		"Armor Ricochet"
+		"index"		"38"
+		"SendTable"
+		{
+			"m_vecPos"		"vector"
+			"m_vecDir"		"vector"
+		}
+	}
+	"CTEMetalSparks"
+	{
+		"name"		"Metal Sparks"
+		"index"		"39"
+		"SendTable"
+		{
+			"m_vecPos"		"vector"
+			"m_vecDir"		"vector"
+		}
+	}
+	"CTEPlantBomb"
+	{
+		"name"		"Bomb Plant"
+		"index"		"40"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_iPlayer"		"int"
+			"m_option"		"int"
+		}
+	}
+	"CTEFireBullets"
+	{
+		"name"		"Shotgun Shot"
+		"index"		"41"
+		"SendTable"
+		{
+			"m_vecOrigin"		"vector"
+			"m_vecAngles[0]"		"float"
+			"m_vecAngles[1]"		"float"
+			"m_weapon"		"int"
+			"m_iMode"		"int"
+			"m_iSeed"		"int"
+			"m_iPlayer"		"int"
+			"m_fInaccuracy"		"float"
+			"m_flRecoilIndex"		"float"
+			"m_fSpread"		"float"
+			"m_nItemDefIndex"		"int"
+			"m_iSoundType"		"int"
+		}
+	}
+	"CTERadioIcon"
+	{
+		"name"		"RadioIcon"
+		"index"		"42"
+		"SendTable"
+		{
+			"m_iAttachToClient"		"int"
+		}
+	}
+	"CTEPlayerAnimEvent"
+	{
+		"name"		"PlayerAnimEvent"
+		"index"		"43"
+		"SendTable"
+		{
+			"m_hPlayer"		"int"
+			"m_iEvent"		"int"
+			"m_nData"		"int"
+		}
+	}
+	"CTEDust"
+	{
+		"name"		"Dust"
+		"index"		"44"
+		"SendTable"
+		{
+			"m_vecOrigin[0]"		"float"
+			"m_vecOrigin[1]"		"float"
+			"m_vecOrigin[2]"		"float"
+			"m_flSize"		"float"
+			"m_flSpeed"		"float"
+			"m_vecDirection"		"vector"
+		}
+	}
+	"CTEFoundryHelpers"
+	{
+		"name"		"FoundryHelpers"
+		"index"		"45"
+		"SendTable"
+		{
+			"m_iEntity"		"int"
+		}
+	}
+}
