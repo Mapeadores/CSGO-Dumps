@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.7.9, appid=730, map=cs_italy, totalcvar=2353
+// game=csgo, version=1.36.8.0, appid=730, map=cs_italy, totalcvar=2352
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -8511,11 +8511,6 @@ sv_dz_show_security_door_item_price "0"
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
 // Default: "0"
 sv_dz_show_weapon_spawns "0"
-
-// If set, will group players into their teams for spectating, if 0, spectating numbers will be the default individual players
-// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
-// Default: "1"
-sv_dz_spec_group_teams "1"
 
 // Number of players per team
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
