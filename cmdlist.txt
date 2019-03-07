@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.7.6, appid=730, map=cs_italy, totalcmd=850
+// game=csgo, version=1.36.7.9, appid=730, map=cs_italy, totalcmd=850
 
 +mat_texture_list
 
@@ -328,7 +328,7 @@ bind
 bind_osx
 
 // Dump the contents of the blackbox
-// Flags: FCVAR_DONTRECORD
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_CHEAT|FCVAR_DONTRECORD
 blackbox_dump
 
 // Record an entry into the blackbox
