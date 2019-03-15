@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.8.0, appid=730, map=cs_italy, totalcvar=2352
+// game=csgo, version=1.36.8.2, appid=730, map=cs_italy, totalcvar=2353
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -3785,6 +3785,12 @@ mp_clan_readyrestart "0"
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "15"
 mp_competitive_endofmatch_extra_time "15"
+
+// How loss streak is affected with round win: 0 = win fully resets loss bonus, 1 = first win steps down loss bonus, 2 = first win holds loss bonus and step down starting with second win
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Min: "0"
+// Default: "1"
+mp_consecutive_loss_aversion "1"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Min: "0"
