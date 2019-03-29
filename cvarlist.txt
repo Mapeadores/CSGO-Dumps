@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.8.4, appid=730, map=cs_italy, totalcvar=2353
+// game=csgo, version=1.36.8.6, appid=730, map=cs_italy, totalcvar=2354
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -2195,6 +2195,11 @@ fps_screenshot_threshold "-1"
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
 // Default: "0"
 free_pass_peek_debug "0"
+
+// 0: Disallow writes to filesystem locations we don't own. 1: Allow such writes (potentially unsafe).
+// Flags: FCVAR_RELEASE
+// Default: "0"
+fs_allow_unsafe_writes "0"
 
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "0"
@@ -7834,8 +7839,8 @@ soundscape_debug "0"
 
 // SourceMod Version
 // Flags: FCVAR_SPONLY|FCVAR_NOTIFY
-// Default: "1.9.0.6267"
-sourcemod_version "1.9.0.6267"
+// Default: "1.9.0.6276"
+sourcemod_version "1.9.0.6276"
 
 // If nonzero, allow free-roaming spectator camera.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
