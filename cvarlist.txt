@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.8.2, appid=730, map=cs_italy, totalcvar=2353
+// game=csgo, version=1.36.8.4, appid=730, map=cs_italy, totalcvar=2353
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -2534,7 +2534,7 @@ hostfile "host.txt"
 // Host game server ip
 // Flags: FCVAR_RELEASE
 // Default: ""
-hostip "-1062731676"
+hostip "-1062731674"
 
 // Hostname for server.
 // Flags: FCVAR_RELEASE
