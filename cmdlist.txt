@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.8.6, appid=730, map=cs_italy, totalcmd=850
+// game=csgo, version=1.36.9.1, appid=730, map=cs_italy, totalcmd=853
 
 +mat_texture_list
 
@@ -868,6 +868,10 @@ execwithwhitelist
 
 // Exit the engine.
 exit
+
+// equips or removes exojump
+// Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
+exojump
 
 // Kills the player with explosive damage
 // Flags: FCVAR_GAMEDLL|FCVAR_PRINTABLEONLY
@@ -2160,6 +2164,10 @@ playcast
 // Play a recorded demo file (.dem ).
 playdemo
 
+// Creates a ping notification where the player is looking.
+// Flags: FCVAR_GAMEDLL|FCVAR_PRINTABLEONLY
+player_ping
+
 // Play a sound, reloading from disk in case of changes.
 playflush
 
@@ -2713,6 +2721,9 @@ sv_dump_class_table
 
 // Dump serialized entity allocations stats.
 sv_dump_serialized_entities_mem
+
+// Flags: FCVAR_GAMEDLL
+sv_dz_paradrop
 
 // Flags: FCVAR_GAMEDLL
 sv_dz_reset_danger_zone

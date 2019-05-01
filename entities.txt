@@ -38,6 +38,7 @@ baseprojectile
 beam
 beam_spotlight
 breachcharge_projectile
+bumpmine_projectile
 cfe_player_decal
 chicken
 color_correction
@@ -283,6 +284,7 @@ info_particle_system
 info_player_counterterrorist
 info_player_deathmatch
 info_player_logo
+info_player_ping
 info_player_start
 info_player_teamspawn
 info_player_terrorist
@@ -444,6 +446,7 @@ prop_physics_override
 prop_physics_respawnable
 prop_ragdoll
 prop_ragdoll_attached
+prop_respawn_crate
 prop_sphere
 prop_talker
 prop_vehicle
@@ -452,6 +455,7 @@ prop_weapon_upgrade_armor
 prop_weapon_upgrade_armor_helmet
 prop_weapon_upgrade_chute
 prop_weapon_upgrade_contractkill
+prop_weapon_upgrade_exojump
 prop_weapon_upgrade_helmet
 prop_weapon_upgrade_tablet_droneintel
 prop_weapon_upgrade_tablet_highres
@@ -532,6 +536,7 @@ weapon_awp
 weapon_basecsgrenade
 weapon_bizon
 weapon_breachcharge
+weapon_bumpmine
 weapon_c4
 weapon_cs_base
 weapon_csbase_gun
@@ -574,6 +579,7 @@ weapon_scout
 weapon_sg550
 weapon_sg552
 weapon_sg556
+weapon_shield
 weapon_smokegrenade
 weapon_snowball
 weapon_ssg08
