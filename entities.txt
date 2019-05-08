@@ -280,6 +280,7 @@ info_node_link
 info_node_link_controller
 info_null
 info_overlay_accessor
+info_paradrop_denial
 info_particle_system
 info_player_counterterrorist
 info_player_deathmatch

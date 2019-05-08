@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.9.1, appid=730, map=cs_italy, totalcvar=2378
+// game=csgo, version=1.36.9.4, appid=730, map=cs_italy, totalcvar=2383
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -9581,6 +9581,26 @@ sv_server_graphic2 ""
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
 // Default: "1"
 sv_server_verify_blood_on_player "1"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "99"
+sv_shield_explosive_damage_cap "99"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "10"
+sv_shield_explosive_damage_crouch_bonus "10"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "250"
+sv_shield_explosive_damage_mindist "250"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "4"
+sv_shield_explosive_damage_mult "4"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0.5"
+sv_shield_explosive_damage_scale "0.5"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "650"
