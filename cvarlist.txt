@@ -1,4 +1,4 @@
-// game=csgo, version=1.36.9.4, appid=730, map=cs_italy, totalcvar=2383
+// game=csgo, version=1.36.9.5, appid=730, map=cs_italy, totalcvar=2384
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -8559,6 +8559,10 @@ sv_dz_player_spawn_armor "0"
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "120"
 sv_dz_player_spawn_health "120"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Default: "15"
+sv_dz_respawn_additional_wait_time_solo "15"
 
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
 // Default: "10"
