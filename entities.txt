@@ -447,7 +447,6 @@ prop_physics_override
 prop_physics_respawnable
 prop_ragdoll
 prop_ragdoll_attached
-prop_respawn_crate
 prop_sphere
 prop_talker
 prop_vehicle
