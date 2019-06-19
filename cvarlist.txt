@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.0.1, appid=730, map=cs_italy, totalcvar=2384
+// game=csgo, version=1.37.0.2, appid=730, map=cs_italy, totalcvar=2384
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -8515,6 +8515,10 @@ sv_dz_contractkill_reward "10"
 // Default: "1"
 sv_dz_enable_respawn "1"
 
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_dz_enable_respawn_solos "0"
+
 // Number of cash bundles to award for exploring a new sector
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "2"
@@ -8589,7 +8593,7 @@ sv_dz_show_weapon_spawns "0"
 // Default: "2"
 sv_dz_squad_wipe_reward "2"
 
-// Number of players per team
+// Max players allowed per team
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1"
 sv_dz_team_count "1"
@@ -8597,10 +8601,6 @@ sv_dz_team_count "1"
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "1"
 sv_dz_warmup_tablet "1"
-
-// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
-// Default: "weapon_glock"
-sv_dz_warmup_weapon "weapon_glock"
 
 // How many money stacks players are rewarded each danger zone wave
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
