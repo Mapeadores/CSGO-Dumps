@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.0.2, appid=730, map=cs_italy, totalcvar=2384
+// game=csgo, version=1.37.0.7, appid=730, map=cs_italy, totalcvar=2388
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -2543,7 +2543,7 @@ hostfile "host.txt"
 // Host game server ip
 // Flags: FCVAR_RELEASE
 // Default: ""
-hostip "-1062731673"
+hostip "-1062731671"
 
 // Hostname for server.
 // Flags: FCVAR_RELEASE
@@ -5297,6 +5297,26 @@ net_allow_syslink "1"
 // Flags: FCVAR_CHEAT
 // Default: "0"
 net_blockmsg "0"
+
+// Netchannel processing is limited to so many milliseconds, abort connection if exceeding budget
+// Flags: FCVAR_RELEASE
+// Default: "0"
+net_chan_limit_msec "0"
+
+// Netchannel statistics will dump in the logs upon request
+// Flags: FCVAR_RELEASE
+// Default: "0"
+net_chan_stats_dump "0"
+
+// Netchannel statistics will dump so many top messages in each category
+// Flags: FCVAR_RELEASE
+// Default: "5"
+net_chan_stats_dump_top_msgs "5"
+
+// Netchannel statistics LRU accumulation buffer size
+// Flags: FCVAR_RELEASE
+// Default: "3"
+net_chan_stats_lru "3"
 
 // Apply bandwidth choke to loopback packets
 // Flags: FCVAR_DEVELOPMENTONLY
