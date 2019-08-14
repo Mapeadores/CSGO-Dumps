@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.0.7, appid=730, map=cs_italy, totalcvar=2388
+// game=csgo, version=1.37.1.0, appid=730, map=cs_italy, totalcvar=2385
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -4284,32 +4284,17 @@ mp_global_damage_per_second "0.0"
 // Default: "800"
 mp_guardian_bot_money_per_wave "800"
 
-// (If set) kill condition token (#quest_hud_guardian_adjective_<name>)
+// Loc string token for instructions for this mission, otherwise default to kills with weapon.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: ""
-mp_guardian_loc_adjective ""
+mp_guardian_loc_string_desc ""
 
-// (If set) kill condition token (#quest_hud_guardian_condition_<name>)
+// Loc string token to use on hud for this mission, otherwise default to kills with weapon.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// Default: ""
-mp_guardian_loc_condition ""
+// Default: "#guardian_mission_type_kills"
+mp_guardian_loc_string_hud "#guardian_mission_type_kills"
 
-// (If set) icon to override for guardian mission
-// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// Default: ""
-mp_guardian_loc_icon ""
-
-// Token to use to generate guardian mission (#quest_hud_guardian_mission_<name>)
-// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// Default: "default"
-mp_guardian_loc_mission "default"
-
-// Token to use to display guardian mission (#quest_hud_guardian_override_<name>) (if exists)
-// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// Default: ""
-mp_guardian_loc_override ""
-
-// (If set) weapon name token (#SFUI_WPNHUD_<name>)
+// Override to weapon dialog var applied to UI
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: ""
 mp_guardian_loc_weapon ""
