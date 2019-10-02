@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.1.0, appid=730, map=cs_italy, totalcmd=853
+// game=csgo, version=1.37.1.6, appid=730, map=cs_italy, totalcmd=854
 
 +mat_texture_list
 
@@ -2768,6 +2768,10 @@ sv_pure_listuserfiles
 // Display status of the query cache (client only)
 // Flags: FCVAR_GAMEDLL
 sv_querycache_stats
+
+// Emit the last grenade thrown on the server.
+// Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
+sv_rethrow_last_grenade
 
 // show stats of running parallel send
 sv_send_stats

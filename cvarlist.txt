@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.1.0, appid=730, map=cs_italy, totalcvar=2385
+// game=csgo, version=1.37.1.6, appid=730, map=cs_italy, totalcvar=2391
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -1293,6 +1293,11 @@ cl_forcepreload "0"
 // Default: "-0.5"
 cl_grass_mip_bias "-0.5"
 
+// Show trajectory of a grenade when pin is pulled.
+// Flags: FCVAR_GAMEDLL|FCVAR_CHEAT|FCVAR_RELEASE
+// Default: "0"
+cl_grenadepreview "0"
+
 // If set to 1, server IPs will be hidden in the console (except when you type 'status')
 // Flags: FCVAR_RELEASE
 // Default: "0"
@@ -1677,6 +1682,11 @@ csm_quality_level "0"
 // Flags: FCVAR_GAMEDLL|FCVAR_CLIENTDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
 custom_bot_difficulty "0"
+
+// Draw the behavior tree of the given bot.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
+// Default: "-1"
+cv_bot_ai_bt_debug_target "-1"
 
 // Maximum height of player and still test for adsp
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -2543,7 +2553,7 @@ hostfile "host.txt"
 // Host game server ip
 // Flags: FCVAR_RELEASE
 // Default: ""
-hostip "-1062731671"
+hostip "-1062731673"
 
 // Hostname for server.
 // Flags: FCVAR_RELEASE
@@ -3730,6 +3740,11 @@ mp_blockstyle "1"
 // Min: "5" Max: "15"
 // Default: "15"
 mp_bonusroundtime "15"
+
+// Use the specified behavior tree file to drive the bot behavior.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: ""
+mp_bot_ai_bt ""
 
 // Whether players can purchase grenades from the buy menu or not.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -7863,8 +7878,8 @@ soundscape_debug "0"
 
 // SourceMod Version
 // Flags: FCVAR_SPONLY|FCVAR_NOTIFY
-// Default: "1.9.0.6276"
-sourcemod_version "1.9.0.6276"
+// Default: "1.9.0.6282"
+sourcemod_version "1.9.0.6282"
 
 // If nonzero, allow free-roaming spectator camera.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
@@ -8929,6 +8944,11 @@ sv_infinite_ammo "0"
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "1"
 sv_instancebaselines "1"
+
+// If turned on, will ignore all invites when user is playing a match
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_invites_only_mainmenu "0"
 
 // Initial upward velocity for player jumps; sqrt(2*gravity*height).
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -10394,6 +10414,11 @@ tv_broadcast_origin_auth "gocastauth"
 // Default: "gocastauth"
 tv_broadcast_origin_auth1 "gocastauth"
 
+// Injection delay request for CDN rebroadcast frameworks, seconds
+// Flags: FCVAR_MATERIAL_SYSTEM|FCVAR_RELEASE
+// Default: "0"
+tv_broadcast_origin_delay "0"
+
 // The interval, in seconds, of re-sending startup data to the broadcast relay server (useful in case relay crashes, restarts or startup data http request fails)
 // Flags: FCVAR_RELEASE
 // Default: "10"
@@ -10542,8 +10567,8 @@ tv_playcast_delay_resync "0"
 tv_playcast_max_rcvage "15"
 
 // Flags: FCVAR_MATERIAL_SYSTEM|FCVAR_RELEASE
-// Default: "55"
-tv_playcast_max_rtdelay "55"
+// Default: "300"
+tv_playcast_max_rtdelay "300"
 
 // Get request X-Origin-Auth string
 // Flags: FCVAR_MATERIAL_SYSTEM|FCVAR_RELEASE
@@ -10584,6 +10609,11 @@ tv_relaytextchat "1"
 // Flags: FCVAR_RELEASE
 // Default: "1"
 tv_relayvoice "1"
+
+// Bypass secure challenge on GOTV port
+// Flags: FCVAR_RELEASE
+// Default: "0"
+tv_secure_bypass "0"
 
 // Snapshots broadcasted per second
 // Flags: FCVAR_REPLICATED|FCVAR_RELEASE
