@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.1.6, appid=730, map=cs_italy, totalcvar=2391
+// game=csgo, version=1.37.2.0, appid=730, map=cs_italy, totalcvar=2392
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -2553,7 +2553,7 @@ hostfile "host.txt"
 // Host game server ip
 // Flags: FCVAR_RELEASE
 // Default: ""
-hostip "-1062731673"
+hostip "-1062731672"
 
 // Hostname for server.
 // Flags: FCVAR_RELEASE
@@ -4594,8 +4594,8 @@ mp_playerid_delay "0.4"
 // Number of seconds to keep showing old information in the status bar
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Min: "0" Max: "1"
-// Default: "0.2"
-mp_playerid_hold "0.2"
+// Default: "0.1"
+mp_playerid_hold "0.1"
 
 // Determines who should see all. 0 = default. 1 = both teams. 2 = Terrorists. 3 = Counter-Terrorists.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -4812,6 +4812,11 @@ mp_td_dmgtowarn "200"
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "50"
 mp_td_spawndmgthreshold "50"
+
+// Grant healthshots in team deathmatch after n kills
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "3"
+mp_tdm_healthshot_killcount "3"
 
 // Number of timeouts each team gets per match.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -11159,8 +11164,8 @@ weapon_recoil_view_punch_extra "0.055"
 
 // When enabled will show knife reticle on clients. Used for game modes requiring target id display when holding a knife.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// Default: "0"
-weapon_reticle_knife_show "0"
+// Default: "1"
+weapon_reticle_knife_show "1"
 
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
 // Default: "0"

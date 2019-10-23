@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.1.6, appid=730, map=cs_italy, totalcmd=854
+// game=csgo, version=1.37.2.0, appid=730, map=cs_italy, totalcmd=855
 
 +mat_texture_list
 
@@ -1213,6 +1213,10 @@ logaddress_add_ex
 // Set URI of a listener to receive logs via http post. Wrap URI in double quotes.
 // Flags: FCVAR_GAMEDLL|FCVAR_UNLOGGED|FCVAR_RELEASE
 logaddress_add_http
+
+// Set a delay and URI of a listener to receive logs via http post. Wrap URI in double quotes.
+// Flags: FCVAR_GAMEDLL|FCVAR_UNLOGGED|FCVAR_RELEASE
+logaddress_add_http_delayed
 
 // Set address and port for remote host <ip:port> and uses a unique checksum from logaddress_token_secret in the UDP packets.
 logaddress_add_ts
