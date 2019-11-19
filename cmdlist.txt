@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.2.0, appid=730, map=cs_italy, totalcmd=855
+// game=csgo, version=1.37.2.4, appid=730, map=cs_italy, totalcmd=856
 
 +mat_texture_list
 
@@ -566,10 +566,6 @@ debug_drawbox
 // Create debug boxes for invalid displacements
 // Flags: FCVAR_CHEAT
 debug_drawdisp_boundbox
-
-// Show/hide the debug system UI.
-// Flags: FCVAR_CHEAT
-debugsystemui
 
 // Skips to location in demo.
 demo_goto
@@ -1439,6 +1435,10 @@ mp_backup_restore_list_files
 // Loads player cash, KDA, scores and team scores; resets to the next round after the backup
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 mp_backup_restore_load_file
+
+// Prints time outs to the console for debugging
+// Flags: FCVAR_GAMEDLL
+mp_debug_timeouts
 
 // Prevents a userid from being auto-kicked
 // Flags: FCVAR_GAMEDLL
@@ -2959,6 +2959,9 @@ vgui_spew_fonts
 
 // show/hide vgui panel by name.
 vgui_togglepanel
+
+// Toggles voice_enable convar.
+voice_enable_toggle
 
 // Mute a specific Steam user
 voice_mute

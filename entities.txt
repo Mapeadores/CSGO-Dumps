@@ -45,6 +45,9 @@ color_correction
 color_correction_volume
 commentary_auto
 cs_bot
+cs_bot_patrol_area
+cs_bot_patrol_area_group
+cs_bot_patrol_area_respawn
 cs_gamerules
 cs_player_manager
 cs_ragdoll
@@ -401,7 +404,11 @@ point_clientcommand
 point_commentary_node
 point_commentary_viewpoint
 point_devshot_camera
+point_dz_coop_itemspawn
+point_dz_coop_itemspawn_group
 point_dz_dronegun
+point_dz_itemspawn
+point_dz_itemspawn_group
 point_dz_parachute
 point_dz_weaponspawn
 point_dz_weaponspawn_group
@@ -438,6 +445,7 @@ prop_dynamic_override
 prop_exploding_barrel
 prop_hallucination
 prop_loot_crate
+prop_mapplaced_long_use_entity
 prop_metal_crate
 prop_money_crate
 prop_paradrop_crate
@@ -451,6 +459,7 @@ prop_sphere
 prop_talker
 prop_vehicle
 prop_vehicle_driveable
+prop_weapon_refill_heavyarmor
 prop_weapon_upgrade_armor
 prop_weapon_upgrade_armor_helmet
 prop_weapon_upgrade_chute

@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.2.0, appid=730, map=cs_italy, totalcvar=2392
+// game=csgo, version=1.37.2.4, appid=730, map=cs_italy, totalcvar=2414
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -736,11 +736,11 @@ bot_chatter_use_rr "1"
 bot_controllable "1"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
-// Default: "0.3"
-bot_coop_force_throw_grenade_chance "0.3"
+// Default: "0.7"
+bot_coop_force_throw_grenade_chance "0.7"
 
 // Max distance bots can see targets (in coop) when they are idle, dormant, hiding or asleep.
-// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Min: "-1"
 // Default: "1400"
 bot_coop_idle_max_vision_distance "1400"
@@ -807,6 +807,11 @@ bot_gungameselect_weapons_ct "deagle awp p90 aug m4a1"
 // Default: "deagle awp p90 ak47 sg556"
 bot_gungameselect_weapons_t "deagle awp p90 ak47 sg556"
 
+// If nonzero, bots will ignore enemies (for debugging).
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
+// Default: "0"
+bot_ignore_enemies "0"
+
 // Bots will not see non-bot players.
 // Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
 // Default: "0"
@@ -837,8 +842,19 @@ bot_join_team "any"
 // Default: ""
 bot_loadout ""
 
+// Max distance bots can hear targets.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Min: "-1"
+// Default: "-1"
+bot_max_hearing_distance_override "-1"
+
+// Bots will see players through smoke clouds up to this length.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "200"
+bot_max_visible_smoke_length "200"
+
 // Max distance bots can see targets.
-// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Min: "-1"
 // Default: "-1"
 bot_max_vision_distance_override "-1"
@@ -897,7 +913,12 @@ bot_show_nav "0"
 // Default: "0"
 bot_show_occupy_time "0"
 
-// If nonzero, immediately stops all bot processing.
+// Show bot patrol areas if present.
+// Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
+// Default: "0"
+bot_show_patrol_areas "0"
+
+// bot_stop <1|all> | <not_bomber> | <t> | <ct>
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
 // Default: "0"
 bot_stop "0"
@@ -1687,6 +1708,16 @@ custom_bot_difficulty "0"
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
 // Default: "-1"
 cv_bot_ai_bt_debug_target "-1"
+
+// Draw hiding spots.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
+// Default: "0"
+cv_bot_ai_bt_hiding_spot_show "0"
+
+// Draw the hiding spot the bot will check next.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
+// Default: "0"
+cv_bot_ai_bt_moveto_show_next_hiding_spot "0"
 
 // Maximum height of player and still test for adsp
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -2553,7 +2584,7 @@ hostfile "host.txt"
 // Host game server ip
 // Flags: FCVAR_RELEASE
 // Default: ""
-hostip "-1062731672"
+hostip "-1062731676"
 
 // Hostname for server.
 // Flags: FCVAR_RELEASE
@@ -3831,6 +3862,16 @@ mp_coop_force_join_ct "0"
 // Default: "0"
 mp_coopmission_bot_difficulty_offset "0"
 
+// Whether this a coop mission leveraging the DZ universe (tablets, choppers, drones, etc).
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+mp_coopmission_dz "0"
+
+// Use new AI system for bots or not.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+mp_coopmission_dz_use_bt "1"
+
 // Which mission the map should run after it loads.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
@@ -4299,6 +4340,11 @@ mp_global_damage_per_second "0.0"
 // Default: "800"
 mp_guardian_bot_money_per_wave "800"
 
+// Force bots to collect hostages after this amount of time if no enemy has been seen.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "50"
+mp_guardian_force_collect_hostages_timeout "50"
+
 // Loc string token for instructions for this mission, otherwise default to kills with weapon.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: ""
@@ -4515,8 +4561,8 @@ mp_match_end_restart "0"
 // Time (in seconds) until a match restarts.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Min: "1" Max: "9999"
-// Default: "15"
-mp_match_restart_delay "15"
+// Default: "25"
+mp_match_restart_delay "25"
 
 // Determines the highest level of armor allowed to be purchased. (0) None, (1) Kevlar, (2) Helmet
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -8869,6 +8915,21 @@ sv_grenade_trajectory_time "20"
 // Default: "4"
 sv_grenade_trajectory_time_spectator "4"
 
+// Extra starting equipment for CT players in guardian modes
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: ""
+sv_guardian_extra_equipment_ct ""
+
+// Extra starting equipment for Terrorist players in guardian modes
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: ""
+sv_guardian_extra_equipment_t ""
+
+// Health given to survivors per wave in guardian mode.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "50"
+sv_guardian_health_refresh_per_wave "50"
+
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "0"
 sv_guardian_heavy_all "0"
@@ -8884,6 +8945,36 @@ sv_guardian_max_wave_for_heavy "0"
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "0"
 sv_guardian_min_wave_for_heavy "0"
+
+// List of additional weapons to refill ammo on waves.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: ""
+sv_guardian_refresh_ammo_for_items_on_waves ""
+
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0"
+sv_guardian_reset_c4_every_wave "0"
+
+// Starting health of guardian players when respawned.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Min: "1"
+// Default: "50"
+sv_guardian_respawn_health "50"
+
+// Starting health in guardian modes.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "100"
+sv_guardian_spawn_health_ct "100"
+
+// Starting health in guardian modes.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "100"
+sv_guardian_spawn_health_t "100"
+
+// Extra starting equipment for human players in guardian modes
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: ""
+sv_guardian_starting_equipment_humans ""
 
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
@@ -8925,6 +9016,14 @@ sv_hibernate_punt_tv_clients "0"
 // Flags: FCVAR_RELEASE
 // Default: "1"
 sv_hibernate_when_empty "1"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "500"
+sv_highlight_distance "500"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "3.5"
+sv_highlight_duration "3.5"
 
 // 0 = OFF, 1 = Halloween, 2 = Winter
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -9921,8 +10020,8 @@ sv_teamid_overhead_maxdist_spec "0"
 
 // Buffer size for writing string table baselines
 // Flags: FCVAR_DEVELOPMENTONLY
-// Default: "131072"
-sv_temp_baseline_string_table_buffer_size "131072"
+// Default: "262144"
+sv_temp_baseline_string_table_buffer_size "262144"
 
 // Tests for scripted sequences that are embedded in the world. Run through your map with this set to check for NPCs falling through the world.
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
@@ -10015,6 +10114,11 @@ sv_validate_edict_change_infos "0"
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
 // Default: "8"
 sv_vehicle_autoaim_scale "8"
+
+// Determines which scene is used for the versus screen.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0"
+sv_versus_screen_scene_id "0"
 
 // Overrides the max players reported to prospective clients
 // Flags: FCVAR_RELEASE
@@ -10144,8 +10248,8 @@ sv_vote_issue_restart_game_allowed "0"
 
 // Can people hold votes to scramble the teams?
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
-// Default: "1"
-sv_vote_issue_scramble_teams_allowed "1"
+// Default: "0"
+sv_vote_issue_scramble_teams_allowed "0"
 
 // Can people hold votes to surrender?
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
@@ -10154,8 +10258,8 @@ sv_vote_issue_surrrender_allowed "1"
 
 // Can people hold votes to swap the teams?
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
-// Default: "1"
-sv_vote_issue_swap_teams_allowed "1"
+// Default: "0"
+sv_vote_issue_swap_teams_allowed "0"
 
 // Can people hold votes to time out?
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
@@ -10186,6 +10290,12 @@ sv_vote_to_changelevel_before_match_point "1"
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0.7"
 sv_walkable_normal "0.7"
+
+// Delay between end of warmup and start of match.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Min: "3" Max: "20"
+// Default: "4"
+sv_warmup_to_freezetime_delay "4"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0.8"
