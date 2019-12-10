@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.2.4, appid=730, map=cs_italy, totalcvar=2414
+// game=csgo, version=1.37.3.2, appid=730, map=cs_italy, totalcvar=2416
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -1478,8 +1478,8 @@ cl_use_simd_bones "1"
 // Default: "0.04"
 cl_voice_buffer_time "0.04"
 
-// Filter voice by name substring
-// Flags: FCVAR_DEVELOPMENTONLY
+// Filter voice traffic, e.g.: 'steamids:765123,765456,7651244'
+// Flags: FCVAR_RELEASE
 // Default: ""
 cl_voice_filter ""
 
@@ -4340,6 +4340,10 @@ mp_global_damage_per_second "0.0"
 // Default: "800"
 mp_guardian_bot_money_per_wave "800"
 
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Default: "0"
+mp_guardian_draw_bounds "0"
+
 // Force bots to collect hostages after this amount of time if no enemy has been seen.
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 // Default: "50"
@@ -7133,8 +7137,8 @@ sm_corecfgfile "addons\sourcemod\configs\core.cfg"
 sm_datetime_format "%d/%m/%Y - %H:%M:%S"
 
 // Log Debug information about potential connection issues.
-// Default: "0"
-sm_debug_connect "0"
+// Default: "1"
+sm_debug_connect "1"
 
 // Mode for deciding immunity protection
 // Flags: FCVAR_SPONLY
@@ -7929,8 +7933,8 @@ soundscape_debug "0"
 
 // SourceMod Version
 // Flags: FCVAR_SPONLY|FCVAR_NOTIFY
-// Default: "1.9.0.6282"
-sourcemod_version "1.9.0.6282"
+// Default: "1.10.0.6456"
+sourcemod_version "1.10.0.6456"
 
 // If nonzero, allow free-roaming spectator camera.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
@@ -8196,6 +8200,11 @@ sv_autobunnyhopping "0"
 // Flags: FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
 sv_autobuyammo "0"
+
+// Execute a mapname cfg file on the server automatically in custom game modes that require it.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "0"
+sv_autoexec_mapname_cfg "0"
 
 // Set to 1 to autosave game on level transition. Does not affect autosave triggers.
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -9027,8 +9036,8 @@ sv_highlight_duration "3.5"
 
 // 0 = OFF, 1 = Halloween, 2 = Winter
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// Default: "0"
-sv_holiday_mode "0"
+// Default: "2"
+sv_holiday_mode "2"
 
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_REPLICATED
 // Default: "0"

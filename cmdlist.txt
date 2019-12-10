@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.2.4, appid=730, map=cs_italy, totalcmd=856
+// game=csgo, version=1.37.3.2, appid=730, map=cs_italy, totalcmd=860
 
 +mat_texture_list
 
@@ -1456,6 +1456,26 @@ mp_forcerespawnplayers
 // Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
 mp_forcewin
 
+// mp_guardian_add_bounds_pt
+// Flags: FCVAR_GAMEDLL
+mp_guardian_add_bounds_pt
+
+// mp_guardian_clear_all_bounds
+// Flags: FCVAR_GAMEDLL
+mp_guardian_clear_all_bounds
+
+// mp_guardian_emit_bounds_config
+// Flags: FCVAR_GAMEDLL
+mp_guardian_emit_bounds_config
+
+// mp_guardian_new_bounds
+// Flags: FCVAR_GAMEDLL
+mp_guardian_new_bounds
+
+// mp_guardian_shoot_point
+// Flags: FCVAR_GAMEDLL
+mp_guardian_shoot_point
+
 // Pause the match in the next freeze time
 // Flags: FCVAR_GAMEDLL
 mp_pause_match
@@ -2399,9 +2419,6 @@ script_reload_entity_code
 // Flags: FCVAR_GAMEDLL
 script_reload_think
 
-// SteamDatagram Network Configuration
-sdr
-
 // Flags: FCVAR_GAMEDLL|FCVAR_MATERIAL_SYSTEM|FCVAR_PRINTABLEONLY|FCVAR_RELEASE
 send_round_backup_file_list
 
@@ -2489,6 +2506,9 @@ sm_internal
 // Prints the temp entity list
 sm_print_telist
 
+// Reparse database configurations file
+sm_reload_databases
+
 // Reparses all loaded translation files
 sm_reload_translations
 
@@ -2503,8 +2523,6 @@ snd_async_showmem_music
 
 // Show brief async memory stats
 snd_async_showmem_summary
-
-snd_debug_sleep
 
 snd_dump_filepaths
 
