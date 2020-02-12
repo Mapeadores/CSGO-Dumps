@@ -165,10 +165,14 @@
 	mp_guardian_loc_weapon								1	// (If set) weapon name token (#SFUI_WPNHUD_<name>)
 	mp_guardian_player_dist_max							1
 	mp_guardian_player_dist_min							1
+	mp_guardian_clear_all_bounds						1
+	mp_guardian_new_bounds								1
+	mp_guardian_add_bounds_pt							1
 	mp_guardian_special_kills_needed					1
 	mp_guardian_special_weapon_needed					1
 	mp_guardian_target_site								1
 	mp_guardian_force_collect_hostages_timeout			1
+	mp_guardian_give_random_grenades_to_bots			1
 	mp_halftime											1	// Set to 1 to stay in halftime indefinitely. Set to 0 to resume the timer.
 	mp_halftime_pausetimer								1	// Set to 1 to stay in halftime indefinitely. Set to 0 to resume the timer.
 	mp_heavyassaultsuit_aimpunch							1	// How much EXTRA aim punch will happen when a player wearing the assault suit gets when shot

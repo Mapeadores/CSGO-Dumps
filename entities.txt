@@ -48,6 +48,8 @@ cs_bot
 cs_bot_patrol_area
 cs_bot_patrol_area_group
 cs_bot_patrol_area_respawn
+cs_bot_patrol_route_respawn
+cs_bot_patrol_route_waypoint
 cs_gamerules
 cs_player_manager
 cs_ragdoll

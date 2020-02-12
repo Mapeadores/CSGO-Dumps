@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.3.2, appid=730, map=cs_italy, totalcvar=2416
+// game=csgo, version=1.37.4.0, appid=730, map=cs_italy, totalcvar=2419
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -4349,6 +4349,11 @@ mp_guardian_draw_bounds "0"
 // Default: "50"
 mp_guardian_force_collect_hostages_timeout "50"
 
+// If set guardian bots will be given grenades at the beginning of the wave.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "1"
+mp_guardian_give_random_grenades_to_bots "1"
+
 // Loc string token for instructions for this mission, otherwise default to kills with weapon.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: ""
@@ -6590,7 +6595,7 @@ r_staticlight_streams "3"
 
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_MATERIAL_SYSTEM
 // Default: "-"
-r_staticlight_streams_indirect_only "-"
+r_staticlight_streams_indirect_only "1"
 
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "-1"
@@ -7933,8 +7938,8 @@ soundscape_debug "0"
 
 // SourceMod Version
 // Flags: FCVAR_SPONLY|FCVAR_NOTIFY
-// Default: "1.10.0.6456"
-sourcemod_version "1.10.0.6456"
+// Default: "1.10.0.6459"
+sourcemod_version "1.10.0.6459"
 
 // If nonzero, allow free-roaming spectator camera.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
@@ -9036,8 +9041,8 @@ sv_highlight_duration "3.5"
 
 // 0 = OFF, 1 = Halloween, 2 = Winter
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// Default: "2"
-sv_holiday_mode "2"
+// Default: "0"
+sv_holiday_mode "0"
 
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_REPLICATED
 // Default: "0"
@@ -9398,6 +9403,10 @@ sv_multiplayer_maxtempentities "32"
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "20"
 sv_multiplayer_sounds "20"
+
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Default: "1"
+sv_mute_players_with_social_penalties "1"
 
 // Test networking visibility distance
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_CHEAT
@@ -10542,6 +10551,11 @@ tv_broadcast_origin_auth1 "gocastauth"
 // Flags: FCVAR_MATERIAL_SYSTEM|FCVAR_RELEASE
 // Default: "0"
 tv_broadcast_origin_delay "0"
+
+// The size, in KB, of the server info message size for tv broadcasts.
+// Flags: FCVAR_RELEASE
+// Default: "512"
+tv_broadcast_server_info_message_size_kb "512"
 
 // The interval, in seconds, of re-sending startup data to the broadcast relay server (useful in case relay crashes, restarts or startup data http request fails)
 // Flags: FCVAR_RELEASE
