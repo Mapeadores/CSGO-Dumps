@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.4.0, appid=730, map=cs_italy, totalcvar=2419
+// game=csgo, version=1.37.4.1, appid=730, map=cs_italy, totalcvar=2419
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -2214,8 +2214,8 @@ force_audio_english "0"
 
 // Frame rate limiter
 // Flags: FCVAR_RELEASE
-// Default: "300"
-fps_max "300"
+// Default: "400"
+fps_max "400"
 
 // Frame rate limiter, main menu
 // Flags: FCVAR_RELEASE
@@ -2224,8 +2224,8 @@ fps_max_menu "120"
 
 // Frame rate limiter, splitscreen
 // Flags: FCVAR_DEVELOPMENTONLY
-// Default: "300"
-fps_max_splitscreen "300"
+// Default: "400"
+fps_max_splitscreen "400"
 
 // While the fps is below the threshold we will dump a screen shot this often in seconds (i.e. 10 = screen shot every 10 seconds when under the given fps.)
 // Flags: FCVAR_CHEAT

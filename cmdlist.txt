@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.3.2, appid=730, map=cs_italy, totalcmd=860
+// game=csgo, version=1.37.4.1, appid=730, map=cs_italy, totalcmd=860
 
 +mat_texture_list
 
