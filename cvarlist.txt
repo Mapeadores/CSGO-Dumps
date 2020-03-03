@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.4.1, appid=730, map=cs_italy, totalcvar=2419
+// game=csgo, version=1.37.4.3, appid=730, map=cs_italy, totalcvar=2421
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -4818,6 +4818,11 @@ mp_starting_losses "0"
 // Default: "800"
 mp_startmoney "16000"
 
+// Punish players for suicides
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "1"
+mp_suicide_penalty "1"
+
 // Specifies number of seconds required to wait before another suicide.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
 // Default: "5"
@@ -8590,6 +8595,11 @@ sv_dz_autojointeam "1"
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "50"
 sv_dz_cash_bundle_size "50"
+
+// Size of a mega cash bundle
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "13"
+sv_dz_cash_mega_bundle_size "13"
 
 // Cash bundles to award for a successful contract kill
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE

@@ -602,6 +602,7 @@ weapon_tmp
 weapon_ump45
 weapon_usp
 weapon_xm1014
+weapon_zone_repulsor
 weaponworldmodel
 wearable_item
 window_pane
