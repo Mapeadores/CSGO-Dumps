@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.4.3, appid=730, map=cs_italy, totalcvar=2421
+// game=csgo, version=1.37.4.8, appid=730, map=cs_italy, totalcvar=2423
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -3168,7 +3168,7 @@ mat_parallaxmapsamplesmax "50"
 // Default: "12"
 mat_parallaxmapsamplesmin "12"
 
-// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_MATERIAL_SYSTEM_THREAD
+// Flags: FCVAR_DEVELOPMENTONLY
 // Default: "1"
 mat_phong "1"
 
@@ -5580,6 +5580,11 @@ net_threaded_socket_recovery_time "60"
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "0"
 net_usesocketsforloopback "0"
+
+// Network warning throttling to specified Hz rate
+// Flags: FCVAR_RELEASE
+// Default: "5"
+net_warningthrottle "5"
 
 // Set to 1 to advance to next frame ( when singlestep == 1 )
 // Flags: FCVAR_CHEAT
@@ -11199,6 +11204,11 @@ weapon_accuracy_logging "0"
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
 weapon_accuracy_nospread "0"
+
+// On deploy, forcibly reset weapon accuracy to zero.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT|FCVAR_RELEASE
+// Default: "0"
+weapon_accuracy_reset_on_deploy "0"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1"

@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.4.3, appid=730, map=cs_italy, totalcmd=860
+// game=csgo, version=1.37.4.8, appid=730, map=cs_italy, totalcmd=861
 
 +mat_texture_list
 
@@ -1435,6 +1435,10 @@ mp_backup_restore_list_files
 // Loads player cash, KDA, scores and team scores; resets to the next round after the backup
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
 mp_backup_restore_load_file
+
+// Clears the cache for behavior tree files.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+mp_bot_ai_bt_clear_cache
 
 // Prints time outs to the console for debugging
 // Flags: FCVAR_GAMEDLL
