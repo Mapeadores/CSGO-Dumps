@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.4.8, appid=730, map=cs_italy, totalcvar=2423
+// game=csgo, version=1.37.5.0, appid=730, map=cs_italy, totalcvar=2423
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -4679,7 +4679,7 @@ mp_randomspawn_los "0"
 // Default: "0"
 mp_require_gun_use_to_acquire "0"
 
-// How many seconds after respawn immunity lasts.
+// How many seconds after respawn immunity lasts. Set to negative value to disable warmup immunity.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "4.0"
 mp_respawn_immunitytime "0"
