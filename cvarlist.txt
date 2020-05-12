@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.5.0, appid=730, map=cs_italy, totalcvar=2423
+// game=csgo, version=1.37.5.2, appid=730, map=cs_italy, totalcvar=2426
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -1519,6 +1519,11 @@ commentary "0"
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
 // Default: "0"
 commentary_available "0"
+
+// Allows the notification area to be visible.
+// Flags: FCVAR_ARCHIVE
+// Default: "1"
+con_allownotify "1"
 
 // Disables drawing of notification area (for taking screenshots).
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -9542,6 +9547,16 @@ sv_prime_accounts_only "0"
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1"
 sv_prop_door_open_speed_scale "1"
+
+// If set to 1, clients may load non-vpk files from pure protected directories.
+// Flags: FCVAR_RELEASE
+// Default: "1"
+sv_pure_allow_loose_file_loads "1"
+
+// If set to 1, the server will allow clients to play if files they loaded are missing on server, otherwise treat client as file mismatch.
+// Flags: FCVAR_RELEASE
+// Default: "1"
+sv_pure_allow_missing_files "1"
 
 // Minimum number of file hashes to agree to form a consensus.
 // Flags: FCVAR_RELEASE
