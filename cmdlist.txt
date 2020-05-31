@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.4.8, appid=730, map=cs_italy, totalcmd=861
+// game=csgo, version=1.37.5.3, appid=730, map=cs_italy, totalcmd=862
 
 +mat_texture_list
 
@@ -966,6 +966,9 @@ fs_fios_print_prefetches
 
 // Show all files currently opened by the engine.
 fs_printopenfiles
+
+// Display current filesystem whitelist state
+fs_show_pure_state
 
 // Force the 360 to get updated files that are in your p4 changelist(s) from the host PC when running with -dvddev.
 fs_syncdvddevcache

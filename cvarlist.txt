@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.5.2, appid=730, map=cs_italy, totalcvar=2426
+// game=csgo, version=1.37.5.3, appid=730, map=cs_italy, totalcvar=2427
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -2818,8 +2818,8 @@ mat_antialias "0"
 
 // Cutoff time (in ms) spent in ServiceAsyncTextureLoads
 // Flags: FCVAR_DEVELOPMENTONLY
-// Default: "0.5"
-mat_async_tex_maxtime_ms "0.5"
+// Default: "3"
+mat_async_tex_maxtime_ms "3"
 
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "1"
@@ -3355,6 +3355,11 @@ mat_texture_list_view "FCVAR_NEVER_AS_STRING"
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "0"
 mat_texture_tracking "0"
+
+// Defer asynchronous loading of high-resolution textures.
+// Flags: FCVAR_DEVELOPMENTONLY
+// Default: "0"
+mat_texturestreaming "0"
 
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "0"
