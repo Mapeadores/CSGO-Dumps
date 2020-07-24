@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.5.3, appid=730, map=cs_italy, totalcvar=2427
+// game=csgo, version=1.37.6.0, appid=730, map=cs_italy, totalcvar=2429
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -2083,6 +2083,16 @@ fast_poly_convert "1"
 // Min: "0" Max: "1"
 // Default: "0"
 ff_damage_bullet_penetration "0"
+
+// Enables or disables team damage from decoy detonation
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+ff_damage_decoy_explosion "0"
+
+// Enables or disables team damage from thrown grenade impacts
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+ff_damage_grenade_hit "1"
 
 // How much to reduce damage done to teammates when shot.  Range is from 0 - 1 (with 1 being damage equal to what is done to an enemy)
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -7958,8 +7968,8 @@ soundscape_debug "0"
 
 // SourceMod Version
 // Flags: FCVAR_SPONLY|FCVAR_NOTIFY
-// Default: "1.10.0.6459"
-sourcemod_version "1.10.0.6459"
+// Default: "1.10.0.6490"
+sourcemod_version "1.10.0.6490"
 
 // If nonzero, allow free-roaming spectator camera.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
