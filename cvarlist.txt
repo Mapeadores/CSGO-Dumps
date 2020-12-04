@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.6.0, appid=730, map=cs_italy, totalcvar=2429
+// game=csgo, version=1.37.7.2, appid=730, map=cs_italy, totalcvar=2456
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -736,8 +736,8 @@ bot_chatter_use_rr "1"
 bot_controllable "1"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
-// Default: "0.7"
-bot_coop_force_throw_grenade_chance "0.7"
+// Default: "0.3"
+bot_coop_force_throw_grenade_chance "0.3"
 
 // Max distance bots can see targets (in coop) when they are idle, dormant, hiding or asleep.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -912,11 +912,6 @@ bot_show_nav "0"
 // Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
 // Default: "0"
 bot_show_occupy_time "0"
-
-// Show bot patrol areas if present.
-// Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
-// Default: "0"
-bot_show_patrol_areas "0"
 
 // bot_stop <1|all> | <not_bomber> | <t> | <ct>
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
@@ -1835,6 +1830,17 @@ demo_highlight_timeafter "4"
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "6"
 demo_highlight_timebefore "6"
+
+// If to use demo index. Needs to be set before loading demo.
+// Flags: FCVAR_ARCHIVE|FCVAR_RELEASE
+// Default: "0"
+demo_index "0"
+
+// Limits the the count of index files of other (non-current) demos. Needs to be set before loading demo.
+// Flags: FCVAR_ARCHIVE|FCVAR_RELEASE
+// Min: "0" Max: "2000"
+// Default: "500"
+demo_index_max_other "500"
 
 // How much origin velocity before it's considered to have 'teleported' causing interpolation to reset.
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -2961,6 +2967,10 @@ mat_dynamic_tonemapping "1"
 // Default: "0"
 mat_dynamiclightmaps "0"
 
+// Flags: FCVAR_ARCHIVE|FCVAR_RELEASE|FCVAR_MATERIAL_SYSTEM_THREAD
+// Default: "9999999"
+mat_enable_uber_shaders "9999999"
+
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "128"
 mat_envmapsize "128"
@@ -3882,16 +3892,6 @@ mp_coop_force_join_ct "0"
 // Default: "0"
 mp_coopmission_bot_difficulty_offset "0"
 
-// Whether this a coop mission leveraging the DZ universe (tablets, choppers, drones, etc).
-// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// Default: "0"
-mp_coopmission_dz "0"
-
-// Use new AI system for bots or not.
-// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// Default: "1"
-mp_coopmission_dz_use_bt "1"
-
 // Which mission the map should run after it loads.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
@@ -4161,8 +4161,8 @@ mp_endmatch_votenextmap_keepcurrent "1"
 
 // Modes available for endmatch voting during War Games. Separate names with spaces.
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
-// Default: "armsrace demolition flyingscoutsman"
-mp_endmatch_votenextmap_wargames_modes "armsrace demolition flyingscoutsman"
+// Default: "armsrace demolition flyingscoutsman retakes"
+mp_endmatch_votenextmap_wargames_modes "armsrace demolition flyingscoutsman retakes"
 
 // Maximum number of maps to include in endmatch voting during War Games
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
@@ -4354,6 +4354,26 @@ mp_give_player_c4 "1"
 // Min: "0"
 // Default: "0.0"
 mp_global_damage_per_second "0.0"
+
+// Adjust the guardian bots' difficulty every nth guardian wave when using behavior trees.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+mp_guardian_ai_bt_difficulty_adjust_wave_interval "1"
+
+// Starting this round a difficulty cap will be applied to the bots.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "2"
+mp_guardian_ai_bt_difficulty_cap_beginning_round "2"
+
+// Starting difficulty level for the gardian bots.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "2"
+mp_guardian_ai_bt_difficulty_initial_value "2"
+
+// How many bots to increase difficulty per wave - this many easier bots will get harder.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "3"
+mp_guardian_ai_bt_difficulty_max_next_level_bots "3"
 
 // The amount of money bots get time each wave the players complete.  This # is absolute and not additive, the money is set to (this)x(wave#) for each bot on each wave.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -4739,9 +4759,94 @@ mp_restartgame "0"
 // Default: "0"
 mp_restartround "0"
 
+// Number of CT's when playing retakes.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "4"
+mp_retake_ct_count "4"
+
+// CT bonus card for full buy round when playing bomb site retake.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "#GameUI_Retake_Card_TheAWPortunity,1,1,rifle4"
+mp_retake_ct_loadout_bonus_card "#GameUI_Retake_Card_TheAWPortunity,1,1,rifle4"
+
+// CT bonus card availability pattern for full buy round when playing bomb site retake.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1,2"
+mp_retake_ct_loadout_bonus_card_availability "1,2"
+
+// CT Loadouts for default pistol round when playing bomb site retake.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1|3;#GameUI_Retake_Card_4v3,0,0,secondary0|1;#GameUI_Retake_Card_FlashOut,0,0,secondary0,grenade2;#GameUI_Retake_Card_HideAndPeek,0,0,secondary0,grenade4"
+mp_retake_ct_loadout_default_pistol_round "1|3;#GameUI_Retake_Card_4v3,0,0,secondary0|1;#GameUI_Retake_Card_FlashOut,0,0,secondary0,grenade2;#GameUI_Retake_Card_HideAndPeek,0,0,secondary0,grenade4"
+
+// CT enemy card for full buy round when playing bomb site retake.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "#GameUI_Retake_Card_BehindEnemyLines,1,1,rifle1,grenade2"
+mp_retake_ct_loadout_enemy_card "#GameUI_Retake_Card_BehindEnemyLines,1,1,rifle1,grenade2"
+
+// CT Loadouts for full buy round when playing bomb site retake.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "4|2;#GameUI_Retake_Card_LightEmUp,1,1,rifle1,grenade2|2;#GameUI_Retake_Card_Kobe,1,1,rifle1,grenade3|1;#GameUI_Retake_Card_1g,1,1,rifle1,grenade0|1;#GameUI_Retake_Card_DisappearingAct,1,1,rifle1,grenade4|1;#GameUI_Retake_Card_EyesOnTarget,1,1,rifle3"
+mp_retake_ct_loadout_full_buy_round "4|2;#GameUI_Retake_Card_LightEmUp,1,1,rifle1,grenade2|2;#GameUI_Retake_Card_Kobe,1,1,rifle1,grenade3|1;#GameUI_Retake_Card_1g,1,1,rifle1,grenade0|1;#GameUI_Retake_Card_DisappearingAct,1,1,rifle1,grenade4|1;#GameUI_Retake_Card_EyesOnTarget,1,1,rifle3"
+
+// CT Loadouts for force buy round when playing bomb site retake.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "3|2;#GameUI_Retake_Card_UmpInSmoke,1,1,smg2,grenade4|2;#GameUI_Retake_Card_FunNGun,1,1,smg0,grenade3|2;#GameUI_Retake_Card_Sharpshooter,1,1,rifle2,grenade2|2;#GameUI_Retake_Card_BurstBullpup,1,1,rifle0"
+mp_retake_ct_loadout_light_buy_round "3|2;#GameUI_Retake_Card_UmpInSmoke,1,1,smg2,grenade4|2;#GameUI_Retake_Card_FunNGun,1,1,smg0,grenade3|2;#GameUI_Retake_Card_Sharpshooter,1,1,rifle2,grenade2|2;#GameUI_Retake_Card_BurstBullpup,1,1,rifle0"
+
+// CT Loadouts for upgraded pistol round when playing bomb site retake.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "2|2;#GameUI_Retake_Card_TakeFive,0,0,secondary3|2;#GameUI_Retake_Card_BlindFire,0,0,secondary2,grenade2|2;#GameUI_Retake_Card_OnlyTakesOne,0,0,secondary4|2;#GameUI_Retake_Card_SneakyBeakyLike,0,0,secondary2,grenade4"
+mp_retake_ct_loadout_upgraded_pistol_round "2|2;#GameUI_Retake_Card_TakeFive,0,0,secondary3|2;#GameUI_Retake_Card_BlindFire,0,0,secondary2,grenade2|2;#GameUI_Retake_Card_OnlyTakesOne,0,0,secondary4|2;#GameUI_Retake_Card_SneakyBeakyLike,0,0,secondary2,grenade4"
+
+// Limit the number of consecutive rounds targeting the same site.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "2"
+mp_retake_max_consecutive_rounds_same_target_site "2"
+
+// Number of terrorists when playing retakes.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "3"
+mp_retake_t_count "3"
+
+// T bonus card for full buy round when playing bomb site retake.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "#GameUI_Retake_Card_TheAWPortunity,1,1,rifle4"
+mp_retake_t_loadout_bonus_card "#GameUI_Retake_Card_TheAWPortunity,1,1,rifle4"
+
+// T bonus card availability pattern for full buy round when playing bomb site retake.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1,1,2"
+mp_retake_t_loadout_bonus_card_availability "1,1,2"
+
+// T Loadouts for default pistol round when playing bomb site retake.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0|3;#GameUI_Retake_Card_4BadGuysLeft,0,0,secondary0|1;#GameUI_Retake_Card_LookAway,0,0,secondary0,grenade2;#GameUI_Retake_Card_WhenThereIsSmoke,0,0,secondary0,grenade4"
+mp_retake_t_loadout_default_pistol_round "0|3;#GameUI_Retake_Card_4BadGuysLeft,0,0,secondary0|1;#GameUI_Retake_Card_LookAway,0,0,secondary0,grenade2;#GameUI_Retake_Card_WhenThereIsSmoke,0,0,secondary0,grenade4"
+
+// T enemy card for full buy round when playing bomb site retake.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "#GameUI_Retake_Card_FindersKeepers,1,1,rifle1,grenade2"
+mp_retake_t_loadout_enemy_card "#GameUI_Retake_Card_FindersKeepers,1,1,rifle1,grenade2"
+
+// T Loadouts for full buy round when playing bomb site retake.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0|2;#GameUI_Retake_Card_OlReliable,1,1,rifle1,grenade2|1;#GameUI_Retake_Card_SmokeShow,1,1,rifle1,grenade4|1;#GameUI_Retake_Card_HotShot,1,1,rifle1,grenade0|1;#GameUI_Retake_Card_EyeSpy,1,1,rifle3,grenade3"
+mp_retake_t_loadout_full_buy_round "0|2;#GameUI_Retake_Card_OlReliable,1,1,rifle1,grenade2|1;#GameUI_Retake_Card_SmokeShow,1,1,rifle1,grenade4|1;#GameUI_Retake_Card_HotShot,1,1,rifle1,grenade0|1;#GameUI_Retake_Card_EyeSpy,1,1,rifle3,grenade3"
+
+// T Loadouts for force buy round when playing bomb site retake.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0|2;#GameUI_Retake_Card_BackInAFlash,1,1,smg2,grenade2|2;#GameUI_Retake_Card_AllIn,1,1,rifle0|1;#GameUI_Retake_Card_BoomBox,1,1,smg0,grenade3,grenade4|1;#GameUI_Retake_Card_SetThemFree,1,1,rifle2,grenade2"
+mp_retake_t_loadout_light_buy_round "0|2;#GameUI_Retake_Card_BackInAFlash,1,1,smg2,grenade2|2;#GameUI_Retake_Card_AllIn,1,1,rifle0|1;#GameUI_Retake_Card_BoomBox,1,1,smg0,grenade3,grenade4|1;#GameUI_Retake_Card_SetThemFree,1,1,rifle2,grenade2"
+
+// T Loadouts for upgraded pistol round when playing bomb site retake.
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0|2;#GameUI_Retake_Card_BlindFire,0,0,secondary2,grenade2|2;#GameUI_Retake_Card_QueOta,0,0,secondary4|1;#GameUI_Retake_Card_SmokeScreen,0,0,secondary2,grenade4|1;#GameUI_Retake_Card_TecTecBoom,0,0,secondary3,grenade3"
+mp_retake_t_loadout_upgraded_pistol_round "0|2;#GameUI_Retake_Card_BlindFire,0,0,secondary2,grenade2|2;#GameUI_Retake_Card_QueOta,0,0,secondary4|1;#GameUI_Retake_Card_SmokeScreen,0,0,secondary2,grenade4|1;#GameUI_Retake_Card_TecTecBoom,0,0,secondary3,grenade3"
+
 // Number of seconds to delay before restarting a round after a win
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
-// Min: "0" Max: "14"
+// Min: "0"
 // Default: "7.0"
 mp_round_restart_delay "10"
 
@@ -5163,6 +5268,11 @@ mp_winlimit "0"
 // Flags: FCVAR_ARCHIVE|FCVAR_USERINFO|FCVAR_PRINTABLEONLY|FCVAR_SS|FCVAR_SERVER_CAN_EXECUTE
 // Default: "unnamed"
 name "unnamed"
+
+// Ignore nav areas with at least one side smaller than this amount during approach point calculation.
+// Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
+// Default: "200"
+nav_approach_points_area_size_threshold "200"
 
 // RGBA color to draw as the background color for nav areas while editing.
 // Flags: FCVAR_GAMEDLL|FCVAR_CHEAT
@@ -5841,10 +5951,10 @@ player_debug_print_damage "0"
 // Default: "0"
 player_old_armor "0"
 
-// Decay for how fast the ping throttle delay will decay
+// Cooldown for how long it takes for a player's ping token to refresh allowing them to ping again (they get 5 tokens).
 // Flags: FCVAR_GAMEDLL|FCVAR_CHEAT|FCVAR_RELEASE
-// Default: "0.58"
-player_ping_throttle_decay "0.58"
+// Default: "30"
+player_ping_token_cooldown "30"
 
 // This determines how long the third person player character will crouch for after landing a jump.  This only affects the third person animation visuals.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
@@ -6711,9 +6821,14 @@ radarvispow ".4"
 rate "196608"
 
 // Address of remote server if sending unconnected rcon commands (format x.x.x.x:p) 
-// Flags: FCVAR_DONTRECORD|FCVAR_RELEASE|FCVAR_SERVER_CANNOT_QUERY
+// Flags: FCVAR_DONTRECORD|FCVAR_RELEASE|FCVAR_NOT_CONNECTED|FCVAR_SERVER_CANNOT_QUERY
 // Default: ""
 rcon_address ""
+
+// Allow clients to use rcon commands on server.
+// Flags: FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+rcon_connected_clients_allow "1"
 
 // remote console password.
 // Flags: FCVAR_DONTRECORD|FCVAR_RELEASE|FCVAR_SERVER_CANNOT_QUERY
@@ -7436,7 +7551,7 @@ snd_hrtf_async "0"
 // Default: "0"
 snd_hrtf_benchmark "0"
 
-// HRTF calculations will calculate the player as being this far behind the camera
+// HRTF calculations will calculate the player as being this far behind the camera. Valid values are between 0 and 300.
 // 
 // Flags: FCVAR_ARCHIVE
 // Default: "100"
@@ -7968,8 +8083,8 @@ soundscape_debug "0"
 
 // SourceMod Version
 // Flags: FCVAR_SPONLY|FCVAR_NOTIFY
-// Default: "1.10.0.6490"
-sourcemod_version "1.10.0.6490"
+// Default: "1.10.0.6492"
+sourcemod_version "1.10.0.6492"
 
 // If nonzero, allow free-roaming spectator camera.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
@@ -8449,6 +8564,11 @@ sv_clip_penetration_traces_to_players "1"
 // Default: "30"
 sv_clockcorrection_msecs "30"
 
+// Enable server-side close captioning: 0 = disabled; 1 = enabled as text chat; 2 = enabled for all sounds
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+sv_closecaption "1"
+
 // When set, ignores coach communication restrictions.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
@@ -8580,6 +8700,7 @@ sv_disable_pas "1"
 // Default: "0"
 sv_disable_querycache "0"
 
+// 0: regular radar; 1: always disabled; 2: disabled in warmup
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "0"
 sv_disable_radar "0"
@@ -9248,6 +9369,16 @@ sv_logsocket2 "1"
 // Default: ""
 sv_logsocket2_substr ""
 
+// Which maps are used for map veto pick sequence
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "de_inferno,de_mirage,de_train,de_vertigo,de_dust2,de_overpass,de_nuke"
+sv_mapvetopickvote_maps "de_inferno,de_mirage,de_train,de_vertigo,de_dust2,de_overpass,de_nuke"
+
+// How many seconds each phase lasts
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "[1:12][2:25][5:12][6:11]"
+sv_mapvetopickvote_phase_duration "[1:12][2:25][5:12][6:11]"
+
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL
 // Default: "0"
 sv_massreport "0"
@@ -9647,6 +9778,11 @@ sv_pvsskipanimation "1"
 // Flags: FCVAR_RELEASE
 // Default: "40"
 sv_quota_stringcmdspersecond "40"
+
+// The number of seconds before radio command tokens refresh.
+// Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
+// Default: "10"
+sv_radio_throttle_window "10"
 
 // Number of minutes to ban users who fail rcon authentication
 // Flags: FCVAR_DEVELOPMENTONLY

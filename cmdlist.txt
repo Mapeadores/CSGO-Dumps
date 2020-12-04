@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.5.3, appid=730, map=cs_italy, totalcmd=862
+// game=csgo, version=1.37.7.2, appid=730, map=cs_italy, totalcmd=860
 
 +mat_texture_list
 
@@ -314,10 +314,6 @@ bench_end
 // Flags: FCVAR_CHEAT
 bench_start
 
-// Uploads most recent benchmark stats to the Valve servers.
-// Flags: FCVAR_CHEAT
-bench_upload
-
 // Takes a snapshot of a particular frame in a time demo.
 benchframe
 
@@ -451,6 +447,10 @@ changelevel
 // Transition to the specified map in single player
 // Flags: FCVAR_DONTRECORD
 changelevel2
+
+// Creates a ping notification triggered by the chatwheel.
+// Flags: FCVAR_GAMEDLL|FCVAR_PRINTABLEONLY
+chatwheel_ping
 
 // Usage:
 //  cl_csm_server_status
@@ -1467,9 +1467,17 @@ mp_forcewin
 // Flags: FCVAR_GAMEDLL
 mp_guardian_add_bounds_pt
 
+// mp_guardian_add_player_spawn_pt
+// Flags: FCVAR_GAMEDLL
+mp_guardian_add_player_spawn_pt
+
 // mp_guardian_clear_all_bounds
 // Flags: FCVAR_GAMEDLL
 mp_guardian_clear_all_bounds
+
+// mp_guardian_clear_all_player_spawns
+// Flags: FCVAR_GAMEDLL
+mp_guardian_clear_all_player_spawns
 
 // mp_guardian_emit_bounds_config
 // Flags: FCVAR_GAMEDLL
@@ -1934,6 +1942,7 @@ net_channels
 net_connections_stats
 
 // Dumps out a report of game event network usage
+// Flags: FCVAR_CHEAT
 net_dumpeventstats
 
 // Inits multiplayer network sockets
@@ -2649,6 +2658,7 @@ sound_device_list
 soundfade
 
 // Describe the current sound device.
+// Flags: FCVAR_CHEAT
 soundinfo
 
 // List all known sounds.
@@ -2781,18 +2791,6 @@ sv_precacheinfo
 
 // Show user data.
 sv_pure
-
-// CheckPureServerVPKFiles
-sv_pure_checkvpk
-
-// ListPureServerFiles
-sv_pure_finduserfiles
-
-// ListPureServerFiles
-sv_pure_listfiles
-
-// ListPureServerFiles
-sv_pure_listuserfiles
 
 // Display status of the query cache (client only)
 // Flags: FCVAR_GAMEDLL
