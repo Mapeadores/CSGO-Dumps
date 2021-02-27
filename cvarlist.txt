@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.7.2, appid=730, map=cs_italy, totalcvar=2456
+// game=csgo, version=1.37.7.9, appid=730, map=cs_italy, totalcvar=2461
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -1117,6 +1117,10 @@ cash_team_loser_bonus "2400"
 // Flags: FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "500"
 cash_team_loser_bonus_consecutive_rounds "0"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+cash_team_loser_bonus_shorthanded "0"
 
 // Flags: FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "800"
@@ -4884,6 +4888,16 @@ mp_shield_speed_deployed "170"
 // Default: "200"
 mp_shield_speed_holstered "200"
 
+// Determines whether kicked players are included in the assessment for short-handedness
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "1"
+mp_shorthanded_cash_bonus_ignore_kicked "1"
+
+// number of previous rounds that a team needs to have been shorthanded before they are eligible for the short-handed loser bonus
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "2"
+mp_shorthanded_cash_bonus_round_delay "2"
+
 // Show entities that are removed on round respawn.
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_CHEAT
 // Default: "0"
@@ -5121,6 +5135,16 @@ mp_teamscore_2 ""
 // Min: "0" Max: "7"
 // Default: "0"
 mp_teamscore_max "0"
+
+// How many seconds is a full technical timeout?
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+mp_technical_timeout_duration_s "0"
+
+// How many technical timeouts are there per team?
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+mp_technical_timeout_per_team "0"
 
 // game time per map in minutes
 // Flags: FCVAR_GAMEDLL|FCVAR_NOTIFY|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -5953,8 +5977,8 @@ player_old_armor "0"
 
 // Cooldown for how long it takes for a player's ping token to refresh allowing them to ping again (they get 5 tokens).
 // Flags: FCVAR_GAMEDLL|FCVAR_CHEAT|FCVAR_RELEASE
-// Default: "30"
-player_ping_token_cooldown "30"
+// Default: "20"
+player_ping_token_cooldown "20"
 
 // This determines how long the third person player character will crouch for after landing a jump.  This only affects the third person animation visuals.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
