@@ -1,4 +1,4 @@
-// game=csgo, version=1.37.8.2, appid=730, map=cs_italy, totalcvar=2461
+// game=csgo, version=1.37.9.9, appid=730, map=cs_italy, totalcvar=2462
 
 // 0 - disable, 1 - default, 2 - force always ON
 // Flags: FCVAR_DEVELOPMENTONLY
@@ -654,10 +654,6 @@ autoaim_max_dist "2160"
 // Default: "1"
 autoaim_viewing_client "1"
 
-// Flags: FCVAR_DEVELOPMENTONLY
-// Default: "1"
-blackbox "1"
-
 // If nonzero, bots may use grenades.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1"
@@ -1167,6 +1163,10 @@ cc_norepeat "5"
 // Flags: FCVAR_DEVELOPMENTONLY|FCVAR_GAMEDLL|FCVAR_REPLICATED
 // Default: "0"
 cc_showmissing "0"
+
+// Flags: FCVAR_MATERIAL_SYSTEM|FCVAR_ARCHIVE
+// Default: ""
+cfgver ""
 
 // If set one, many debug prints to help track down the TLK_IDLE issue. Set two for super verbose info
 // Flags: FCVAR_GAMEDLL|FCVAR_ARCHIVE
@@ -3481,8 +3481,8 @@ mem_test_quiet "0"
 
 // Metamod:Source Version
 // Flags: FCVAR_SPONLY|FCVAR_NOTIFY
-// Default: "1.10.7-dev"
-metamod_version "1.10.7-devV"
+// Default: "1.11.0-dev+1145"
+metamod_version "1.11.0-dev+1145V"
 
 // Flags: FCVAR_DEVELOPMENTONLY
 // Default: "0"
@@ -8107,8 +8107,8 @@ soundscape_debug "0"
 
 // SourceMod Version
 // Flags: FCVAR_SPONLY|FCVAR_NOTIFY
-// Default: "1.10.0.6492"
-sourcemod_version "1.10.0.6492"
+// Default: "1.10.0.6510"
+sourcemod_version "1.10.0.6510"
 
 // If nonzero, allow free-roaming spectator camera.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_CHEAT
@@ -8647,7 +8647,7 @@ sv_cs_player_speed_has_hostage "200"
 // Default: "-1"
 sv_ct_spawn_on_bombsite "-1"
 
-// Turn this off to disable the player's damage feed in the console after getting killed.
+// 0: no damage print in console. 1: damage print in console on death. 2: damage print in console only at next round restart.
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
 // Default: "1"
 sv_damage_print_enable "1"
@@ -8969,6 +8969,10 @@ sv_extract_ammo_from_dropped_weapons "0"
 // Min: "-5" Max: "5"
 // Default: "0"
 sv_extreme_strafe_accuracy_fishtail "0"
+
+// Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
+// Default: "0"
+sv_fade_player_visibility_farz "0"
 
 // ExoJump fall damage multiplier
 // Flags: FCVAR_GAMEDLL|FCVAR_REPLICATED|FCVAR_RELEASE
@@ -9395,8 +9399,8 @@ sv_logsocket2_substr ""
 
 // Which maps are used for map veto pick sequence
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
-// Default: "de_inferno,de_mirage,de_train,de_vertigo,de_dust2,de_overpass,de_nuke"
-sv_mapvetopickvote_maps "de_inferno,de_mirage,de_train,de_vertigo,de_dust2,de_overpass,de_nuke"
+// Default: "de_inferno,de_mirage,de_vertigo,de_dust2,de_overpass,de_nuke,de_ancient"
+sv_mapvetopickvote_maps "de_inferno,de_mirage,de_vertigo,de_dust2,de_overpass,de_nuke,de_ancient"
 
 // How many seconds each phase lasts
 // Flags: FCVAR_GAMEDLL|FCVAR_RELEASE
